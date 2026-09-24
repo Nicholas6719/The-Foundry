@@ -84,6 +84,10 @@ struct ListScreen: View {
                 .presentationDetents([.large])
                 .presentationBackground(Palette.bg)
         }
-        .onChange(of: env.router.newTargetRequests) { sheet = .new }
+        .onChange(of: env.router.pendingNewTarget, initial: true) { _, pending in
+            guard pending else { return }
+            env.router.pendingNewTarget = false
+            sheet = .new
+        }
     }
 }

@@ -110,7 +110,7 @@ struct RecoveryPill: View {
             Text(text(boosted: boosted))
                 .condensed(fontSize, tracking: 0.06, relativeTo: .headline)
                 .lineLimit(1)
-                .minimumScaleFactor(0.7)
+                .minimumScaleFactor(0.5)
         }
         .foregroundStyle(boosted ? Palette.accent : Palette.textMuted)
         .frame(maxWidth: .infinity, minHeight: height)

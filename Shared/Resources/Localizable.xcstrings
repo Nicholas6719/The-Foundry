@@ -1,1 +1,2360 @@
-{"sourceLanguage":"en","strings":{},"version":"1.0"}
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": ""
+          }
+        }
+      }
+    },
+    "%@ %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ %@"
+          }
+        }
+      }
+    },
+    "%@ / %@ XP": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ / %@ XP"
+          }
+        }
+      }
+    },
+    "%@ LB": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ LB"
+          }
+        }
+      }
+    },
+    "%@ LB · %lld × %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ LB · %lld × %lld"
+          }
+        }
+      }
+    },
+    "%@ XP": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ XP"
+          }
+        }
+      }
+    },
+    "%@ day": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ day"
+          }
+        }
+      }
+    },
+    "%@ has no lifts yet.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%@ has no lifts yet."
+          }
+        }
+      }
+    },
+    "%lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld"
+          }
+        }
+      }
+    },
+    "%lld / %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld / %lld"
+          }
+        }
+      }
+    },
+    "%lld DAY STREAK": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld DAY STREAK"
+          }
+        }
+      }
+    },
+    "%lld day streak": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld day streak"
+          }
+        }
+      }
+    },
+    "%lld hours %lld minutes of a %@ goal": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld hours %lld minutes of a %@ goal"
+          }
+        }
+      }
+    },
+    "%lld min": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld min"
+          }
+        }
+      }
+    },
+    "%lld minutes left": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld minutes left"
+          }
+        }
+      }
+    },
+    "%lld of %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld arrows fired": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld arrows fired"
+          }
+        }
+      }
+    },
+    "%lld of %lld arrows lodged": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld arrows lodged"
+          }
+        }
+      }
+    },
+    "%lld of %lld names struck": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld names struck"
+          }
+        }
+      }
+    },
+    "%lld of %lld sessions today": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld sessions today"
+          }
+        }
+      }
+    },
+    "%lld of %lld sets": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld sets"
+          }
+        }
+      }
+    },
+    "%lld of %lld sets complete": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld of %lld sets complete"
+          }
+        }
+      }
+    },
+    "%lld reps": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld reps"
+          }
+        }
+      }
+    },
+    "%lld reps done": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%lld reps done"
+          }
+        }
+      }
+    },
+    "+%lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "+%lld"
+          }
+        }
+      }
+    },
+    "A personal project for personal use. Not affiliated with or endorsed by any rights holder.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "A personal project for personal use. Not affiliated with or endorsed by any rights holder."
+          }
+        }
+      }
+    },
+    "ADD A NAME": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ADD A NAME"
+          }
+        }
+      }
+    },
+    "ADD HABIT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ADD HABIT"
+          }
+        }
+      }
+    },
+    "ADD HABITS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ADD HABITS"
+          }
+        }
+      }
+    },
+    "ADD LIFT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ADD LIFT"
+          }
+        }
+      }
+    },
+    "ADD LIFTS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ADD LIFTS"
+          }
+        }
+      }
+    },
+    "ARCHIVE HABIT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ARCHIVE HABIT"
+          }
+        }
+      }
+    },
+    "AUTO · SLEEP": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "AUTO · SLEEP"
+          }
+        }
+      }
+    },
+    "AUTO · WORKOUT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "AUTO · WORKOUT"
+          }
+        }
+      }
+    },
+    "Add Habit": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Add Habit"
+          }
+        }
+      }
+    },
+    "Adjust reps": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Adjust reps"
+          }
+        }
+      }
+    },
+    "Apps can't flip a Focus on their own. Two Shortcuts do it for Foundry. When a session starts you'll see a quick hop to Shortcuts and straight back.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Apps can't flip a Focus on their own. Two Shortcuts do it for Foundry. When a session starts you'll see a quick hop to Shortcuts and straight back."
+          }
+        }
+      }
+    },
+    "Archiving keeps its history but takes it out of the Quiver.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Archiving keeps its history but takes it out of the Quiver."
+          }
+        }
+      }
+    },
+    "Arrows fired today": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Arrows fired today"
+          }
+        }
+      }
+    },
+    "At least %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "At least %@"
+          }
+        }
+      }
+    },
+    "Auto rule": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Auto rule"
+          }
+        }
+      }
+    },
+    "BEGIN FOCUS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "BEGIN FOCUS"
+          }
+        }
+      }
+    },
+    "BUILD THE DAY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "BUILD THE DAY"
+          }
+        }
+      }
+    },
+    "BUILD YOUR FIRST DAY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "BUILD YOUR FIRST DAY"
+          }
+        }
+      }
+    },
+    "Build a workout day: name it, pick the weekdays, add your lifts. Every clean session climbs a rung.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Build a workout day: name it, pick the weekdays, add your lifts. Every clean session climbs a rung."
+          }
+        }
+      }
+    },
+    "Bullseye, all %lld arrows lodged": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Bullseye, all %lld arrows lodged"
+          }
+        }
+      }
+    },
+    "CANCEL": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "CANCEL"
+          }
+        }
+      }
+    },
+    "CHECK HEALTH ACCESS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "CHECK HEALTH ACCESS"
+          }
+        }
+      }
+    },
+    "CLIMBED FROM %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "CLIMBED FROM %@"
+          }
+        }
+      }
+    },
+    "CONNECT HEALTH": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "CONNECT HEALTH"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "Check Health access": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Check Health access"
+          }
+        }
+      }
+    },
+    "Check in every day. Strike names off the List, fire your habits into the target, climb the ladder, hold the Island.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Check in every day. Strike names off the List, fire your habits into the target, climb the ladder, hold the Island."
+          }
+        }
+      }
+    },
+    "Choose a different name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Choose a different name"
+          }
+        }
+      }
+    },
+    "Choose what Foundry does when this Focus turns on.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Choose what Foundry does when this Focus turns on."
+          }
+        }
+      }
+    },
+    "Circled in red. Only one at a time.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Circled in red. Only one at a time."
+          }
+        }
+      }
+    },
+    "Command %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Command %lld"
+          }
+        }
+      }
+    },
+    "Connect Health": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Connect Health"
+          }
+        }
+      }
+    },
+    "Continue": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Continue"
+          }
+        }
+      }
+    },
+    "Current rank": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Current rank"
+          }
+        }
+      }
+    },
+    "DAY STREAK": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "DAY STREAK"
+          }
+        }
+      }
+    },
+    "DELETE": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "DELETE"
+          }
+        }
+      }
+    },
+    "DELETE DAY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "DELETE DAY"
+          }
+        }
+      }
+    },
+    "DELETE NAME": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "DELETE NAME"
+          }
+        }
+      }
+    },
+    "Day name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Day name"
+          }
+        }
+      }
+    },
+    "Decrease %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Decrease %@"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Delete"
+          }
+        }
+      }
+    },
+    "Delete Day": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Delete Day"
+          }
+        }
+      }
+    },
+    "Delete this day and its lifts?": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Delete this day and its lifts?"
+          }
+        }
+      }
+    },
+    "Done": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "Double-tap to fire": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Double-tap to fire"
+          }
+        }
+      }
+    },
+    "Double-tap to restore": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Double-tap to restore"
+          }
+        }
+      }
+    },
+    "Double-tap to strike": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Double-tap to strike"
+          }
+        }
+      }
+    },
+    "Double-tap to undo": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Double-tap to undo"
+          }
+        }
+      }
+    },
+    "Due": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Due"
+          }
+        }
+      }
+    },
+    "Due date": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Due date"
+          }
+        }
+      }
+    },
+    "EDIT %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "EDIT %@"
+          }
+        }
+      }
+    },
+    "EMPTY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "EMPTY"
+          }
+        }
+      }
+    },
+    "ENTER": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ENTER"
+          }
+        }
+      }
+    },
+    "ENTER THE ISLAND": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "ENTER THE ISLAND"
+          }
+        }
+      }
+    },
+    "Earned": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Earned"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Edit"
+          }
+        }
+      }
+    },
+    "Edit…": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Edit…"
+          }
+        }
+      }
+    },
+    "Enter the Island": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Enter the Island"
+          }
+        }
+      }
+    },
+    "Erase All Data": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Erase All Data"
+          }
+        }
+      }
+    },
+    "Erase everything in Foundry?": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Erase everything in Foundry?"
+          }
+        }
+      }
+    },
+    "FOUNDRY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "FOUNDRY"
+          }
+        }
+      }
+    },
+    "FOUNDRY FOCUS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "FOUNDRY FOCUS"
+          }
+        }
+      }
+    },
+    "Fired": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Fired"
+          }
+        }
+      }
+    },
+    "Fired automatically": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Fired automatically"
+          }
+        }
+      }
+    },
+    "Focus length": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Focus length"
+          }
+        }
+      }
+    },
+    "Foundry": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry"
+          }
+        }
+      }
+    },
+    "Foundry Focus": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry Focus"
+          }
+        }
+      }
+    },
+    "Foundry Focus is off": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry Focus is off"
+          }
+        }
+      }
+    },
+    "Foundry Focus is on": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry Focus is on"
+          }
+        }
+      }
+    },
+    "Foundry behavior": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry behavior"
+          }
+        }
+      }
+    },
+    "Foundry hub: five stations around the emblem": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry hub: five stations around the emblem"
+          }
+        }
+      }
+    },
+    "Foundry reads your sleep, workouts, and resting heart rate to show your Vitals and power your Recovery bonus. Nothing leaves your devices except your own private iCloud.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry reads your sleep, workouts, and resting heart rate to show your Vitals and power your Recovery bonus. Nothing leaves your devices except your own private iCloud."
+          }
+        }
+      }
+    },
+    "Foundry sends a single notification when an Island session ends. Nothing else.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Foundry sends a single notification when an Island session ends. Nothing else."
+          }
+        }
+      }
+    },
+    "Four daily arrows to start. Rename any of them; you can change them later in Settings.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Four daily arrows to start. Rename any of them; you can change them later in Settings."
+          }
+        }
+      }
+    },
+    "Friday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Friday"
+          }
+        }
+      }
+    },
+    "Go": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Go"
+          }
+        }
+      }
+    },
+    "HEALTH SYNCED": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "HEALTH SYNCED"
+          }
+        }
+      }
+    },
+    "Habit": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Habit"
+          }
+        }
+      }
+    },
+    "Habit %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Habit %lld"
+          }
+        }
+      }
+    },
+    "Habit name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Habit name"
+          }
+        }
+      }
+    },
+    "Health lives on your iPhone. Turn on iCloud sync to see it here.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Health lives on your iPhone. Turn on iCloud sync to see it here."
+          }
+        }
+      }
+    },
+    "I MADE IT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "I MADE IT"
+          }
+        }
+      }
+    },
+    "Increase %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Increase %@"
+          }
+        }
+      }
+    },
+    "Island sessions can switch on a Foundry Focus so only Favorites get through. It takes two small Shortcuts. You can do it now or later in Settings.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Island sessions can switch on a Foundry Focus so only Favorites get through. It takes two small Shortcuts. You can do it now or later in Settings."
+          }
+        }
+      }
+    },
+    "Island sessions per day": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Island sessions per day"
+          }
+        }
+      }
+    },
+    "LATER": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "LATER"
+          }
+        }
+      }
+    },
+    "LB · RUNG %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "LB · RUNG %lld"
+          }
+        }
+      }
+    },
+    "LEAD LIFT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "LEAD LIFT"
+          }
+        }
+      }
+    },
+    "LEAVE ISLAND": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "LEAVE ISLAND"
+          }
+        }
+      }
+    },
+    "Last sync %@ ago": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Last sync %@ ago"
+          }
+        }
+      }
+    },
+    "Lift name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Lift name"
+          }
+        }
+      }
+    },
+    "Load Demo Data": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Load Demo Data"
+          }
+        }
+      }
+    },
+    "Locked, %@ XP": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Locked, %@ XP"
+          }
+        }
+      }
+    },
+    "Locked. %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Locked. %@"
+          }
+        }
+      }
+    },
+    "MAKE LEAD LIFT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "MAKE LEAD LIFT"
+          }
+        }
+      }
+    },
+    "MARKED DONE": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "MARKED DONE"
+          }
+        }
+      }
+    },
+    "Make primary": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Make primary"
+          }
+        }
+      }
+    },
+    "Monday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Monday"
+          }
+        }
+      }
+    },
+    "NEW DAY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NEW DAY"
+          }
+        }
+      }
+    },
+    "NEXT": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NEXT"
+          }
+        }
+      }
+    },
+    "NEXT %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NEXT %@"
+          }
+        }
+      }
+    },
+    "NO LADDER YET": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NO LADDER YET"
+          }
+        }
+      }
+    },
+    "NOT SYNCED": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NOT SYNCED"
+          }
+        }
+      }
+    },
+    "Name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "Names, habits, lifts, XP and medals on this device are removed.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Names, habits, lifts, XP and medals on this device are removed."
+          }
+        }
+      }
+    },
+    "New Name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "New Name"
+          }
+        }
+      }
+    },
+    "No arrows in the quiver yet.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No arrows in the quiver yet."
+          }
+        }
+      }
+    },
+    "No habits yet": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No habits yet"
+          }
+        }
+      }
+    },
+    "No ladder yet.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No ladder yet."
+          }
+        }
+      }
+    },
+    "No names yet": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No names yet"
+          }
+        }
+      }
+    },
+    "No open names. Add one on the List.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No open names. Add one on the List."
+          }
+        }
+      }
+    },
+    "No sessions yet. The first one sets the bar.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No sessions yet. The first one sets the bar."
+          }
+        }
+      }
+    },
+    "No sleep recorded": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No sleep recorded"
+          }
+        }
+      }
+    },
+    "Not done": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Not done"
+          }
+        }
+      }
+    },
+    "Not now": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Not now"
+          }
+        }
+      }
+    },
+    "Not synced": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Not synced"
+          }
+        }
+      }
+    },
+    "Nothing on the ladder today. Recover, or pick a day and climb anyway.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Nothing on the ladder today. Recover, or pick a day and climb anyway."
+          }
+        }
+      }
+    },
+    "OF %@ GOAL": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "OF %@ GOAL"
+          }
+        }
+      }
+    },
+    "OPEN SHORTCUTS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "OPEN SHORTCUTS"
+          }
+        }
+      }
+    },
+    "OPEN THE ISLAND": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "OPEN THE ISLAND"
+          }
+        }
+      }
+    },
+    "OPEN TRAINING": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "OPEN TRAINING"
+          }
+        }
+      }
+    },
+    "One ping when you're done": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "One ping when you're done"
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Open Settings"
+          }
+        }
+      }
+    },
+    "Opens Rank": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Opens Rank"
+          }
+        }
+      }
+    },
+    "Opens set logging": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Opens set logging"
+          }
+        }
+      }
+    },
+    "Opens set logging for %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Opens set logging for %@"
+          }
+        }
+      }
+    },
+    "Opens the Island": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Opens the Island"
+          }
+        }
+      }
+    },
+    "Opens this screen": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Opens this screen"
+          }
+        }
+      }
+    },
+    "PAUSE": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "PAUSE"
+          }
+        }
+      }
+    },
+    "PUSH": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "PUSH"
+          }
+        }
+      }
+    },
+    "RECOVERY %lld%%": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "RECOVERY %lld%%"
+          }
+        }
+      }
+    },
+    "REFRESH": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "REFRESH"
+          }
+        }
+      }
+    },
+    "REPS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "REPS"
+          }
+        }
+      }
+    },
+    "REST DAY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "REST DAY"
+          }
+        }
+      }
+    },
+    "RESUME": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "RESUME"
+          }
+        }
+      }
+    },
+    "Rank: %@, %@ XP": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Rank: %@, %@ XP"
+          }
+        }
+      }
+    },
+    "Reached": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Reached"
+          }
+        }
+      }
+    },
+    "Read only: sleep, workouts and resting heart rate. Only daily summaries sync, to your own private iCloud.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Read only: sleep, workouts and resting heart rate. Only daily summaries sync, to your own private iCloud."
+          }
+        }
+      }
+    },
+    "Ready to fire": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Ready to fire"
+          }
+        }
+      }
+    },
+    "Refreshes from Apple Health": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Refreshes from Apple Health"
+          }
+        }
+      }
+    },
+    "Remove lift": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Remove lift"
+          }
+        }
+      }
+    },
+    "Reset All Data": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Reset All Data"
+          }
+        }
+      }
+    },
+    "Rest day": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Rest day"
+          }
+        }
+      }
+    },
+    "Rest day.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Rest day."
+          }
+        }
+      }
+    },
+    "Restore": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Restore"
+          }
+        }
+      }
+    },
+    "Review Access in Settings": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Review Access in Settings"
+          }
+        }
+      }
+    },
+    "SAVE": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "SAVE"
+          }
+        }
+      }
+    },
+    "SET": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "SET"
+          }
+        }
+      }
+    },
+    "SET %lld · REPS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "SET %lld · REPS"
+          }
+        }
+      }
+    },
+    "SET UP FOCUS": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "SET UP FOCUS"
+          }
+        }
+      }
+    },
+    "SKIP FOR NOW": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "SKIP FOR NOW"
+          }
+        }
+      }
+    },
+    "START %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "START %@"
+          }
+        }
+      }
+    },
+    "Salmon ladder": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Salmon ladder"
+          }
+        }
+      }
+    },
+    "Saturday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Saturday"
+          }
+        }
+      }
+    },
+    "Set %lld": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Set %lld"
+          }
+        }
+      }
+    },
+    "Set Up Foundry Focus": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Set Up Foundry Focus"
+          }
+        }
+      }
+    },
+    "Set up Foundry Focus": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Set up Foundry Focus"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "Setup and Test": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Setup and Test"
+          }
+        }
+      }
+    },
+    "Sleep goal": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sleep goal"
+          }
+        }
+      }
+    },
+    "Sleep last night": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sleep last night"
+          }
+        }
+      }
+    },
+    "Sleep stages": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sleep stages"
+          }
+        }
+      }
+    },
+    "Start the Island when this Focus turns on": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Start the Island when this Focus turns on"
+          }
+        }
+      }
+    },
+    "Starts the Island": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Starts the Island"
+          }
+        }
+      }
+    },
+    "Strike": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Strike"
+          }
+        }
+      }
+    },
+    "Sunday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sunday"
+          }
+        }
+      }
+    },
+    "Sync is switched off in this build. SETUP.md explains how to turn it on.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sync is switched off in this build. SETUP.md explains how to turn it on."
+          }
+        }
+      }
+    },
+    "Synced with Apple Health": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Synced with Apple Health"
+          }
+        }
+      }
+    },
+    "THE FOUNDRY": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "THE FOUNDRY"
+          }
+        }
+      }
+    },
+    "TONIGHT'S MISSION": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "TONIGHT'S MISSION"
+          }
+        }
+      }
+    },
+    "Tap a set when it's done. Hold to change the reps.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Tap a set when it's done. Hold to change the reps."
+          }
+        }
+      }
+    },
+    "Target": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Target"
+          }
+        }
+      }
+    },
+    "Target for this session": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Target for this session"
+          }
+        }
+      }
+    },
+    "Test runs On, then Off, and reports back here.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Test runs On, then Off, and reports back here."
+          }
+        }
+      }
+    },
+    "The List is empty. Write the first name.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "The List is empty. Write the first name."
+          }
+        }
+      }
+    },
+    "The bar sits on the %@ pound rung, %@ is next": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "The bar sits on the %@ pound rung, %@ is next"
+          }
+        }
+      }
+    },
+    "Thursday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Thursday"
+          }
+        }
+      }
+    },
+    "Train fires itself after a workout. Sleep fires itself after 7 hours.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Train fires itself after a workout. Sleep fires itself after 7 hours."
+          }
+        }
+      }
+    },
+    "Tuesday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Tuesday"
+          }
+        }
+      }
+    },
+    "Turns on Foundry Focus · signal stays on": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Turns on Foundry Focus · signal stays on"
+          }
+        }
+      }
+    },
+    "Up to %lld. Drag to reorder.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Up to %lld. Drag to reorder."
+          }
+        }
+      }
+    },
+    "WRITE IT DOWN": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "WRITE IT DOWN"
+          }
+        }
+      }
+    },
+    "Wednesday": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Wednesday"
+          }
+        }
+      }
+    },
+    "Workout minutes this week": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Workout minutes this week"
+          }
+        }
+      }
+    },
+    "Workouts per week": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Workouts per week"
+          }
+        }
+      }
+    },
+    "Write the first name.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Write the first name."
+          }
+        }
+      }
+    },
+    "Your data syncs through your private iCloud between iPhone and Mac.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Your data syncs through your private iCloud between iPhone and Mac."
+          }
+        }
+      }
+    },
+    "iPhone doesn't tell apps whether Health access was allowed. If Foundry shows nothing, open Settings › Apps › Foundry › Health (or the Health app › Sharing › Apps) and turn on Sleep, Workouts and Resting Heart Rate.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "iPhone doesn't tell apps whether Health access was allowed. If Foundry shows nothing, open Settings › Apps › Foundry › Health (or the Health app › Sharing › Apps) and turn on Sleep, Workouts and Resting Heart Rate."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

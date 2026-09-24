@@ -77,8 +77,17 @@ final class Router {
     var showIsland = false
     var showSettings = false
     var macSection: MacSection = .foundry
-    /// Bumped to ask the List to open its "new name" sheet (⌘N).
-    var newTargetRequests = 0
+    /// Asks the List to open its "new name" sheet (⌘N) as soon as it is on screen.
+    var pendingNewTarget = false
+
+    func requestNewTarget() {
+        #if os(macOS)
+        macSection = .list
+        #else
+        tab = .list
+        #endif
+        pendingNewTarget = true
+    }
     /// Set when the Island should begin a session as soon as it appears.
     var autoStartIsland = false
 
