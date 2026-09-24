@@ -4,7 +4,7 @@ Choices made where the spec was silent or had to bend. One line each: decision, 
 
 ## Build and project
 - No signing certificate was found on this Mac, so the committed defaults sign locally with iCloud off; team `GVCGVNM4PS` (from Xcode's template project) is suggested in SETUP.md. Why: builds work today; turning on sync needs your account.
-- The Xcode starter template (`The Foundry.xcodeproj`, `The Foundry/`, test folders) from the first commit was left untouched, not deleted. Why: deleting existing repo content needs your OK.
+- The Xcode starter template from the first commit (`The Foundry.xcodeproj` and its folders) was removed at your request; `Foundry.xcodeproj` is the only project.
 - Swift 6 language mode with main-actor default isolation. Why: it compiled with zero warnings, so the stricter mode won.
 - Git remote `origin` was added (the local repo had none) and work is on `v1-build`.
 - Caveat ships only as a variable font, so `scripts/make-caveat-bold.py` bakes a static Bold (wght 700) instance. Why: reliable weight on both platforms.

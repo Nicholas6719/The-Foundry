@@ -55,5 +55,3 @@ xcodebuild -project Foundry.xcodeproj -scheme Foundry -destination 'platform=iOS
 | `docs/` | Design mockups (`design-reference/`) and screenshots. |
 
 Fonts (Barlow, Barlow Condensed, IBM Plex Mono, Caveat) are bundled under the SIL Open Font License; licenses sit next to the font files.
-
-The older `The Foundry.xcodeproj` and its folders are Xcode's starter template from the first commit. They are not used; delete them whenever you like.
