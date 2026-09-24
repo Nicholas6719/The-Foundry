@@ -22,6 +22,7 @@ struct SettingsView: View {
     @Query private var profiles: [Profile]
     @State private var sheet: SettingsSheet?
     @State private var confirmReset = false
+    @State private var connectRequests = 0
 
     var body: some View {
         NavigationStack {
@@ -62,6 +63,7 @@ struct SettingsView: View {
             .frame(minWidth: 480, minHeight: 560)
             #endif
         }
+        .healthAccessRequest(trigger: connectRequests)
         .confirmationDialog("Erase everything in Foundry?", isPresented: $confirmReset, titleVisibility: .visible) {
             Button("Erase All Data", role: .destructive) { env.store.deleteEverything() }
         } message: {
@@ -112,7 +114,7 @@ struct SettingsView: View {
                 #endif
             case .notDetermined:
                 row("Apple Health", value: "Not connected")
-                Button("Connect Health") { Task { await health.requestAccess() } }
+                Button("Connect Health") { connectRequests += 1 }
                     .listRowBackground(Palette.surface)
             case .requested:
                 row("Apple Health", value: health.lastSync.map { "Synced \(SyncChip.ago($0).lowercased()) ago" } ?? "Connected")

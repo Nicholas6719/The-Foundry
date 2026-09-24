@@ -35,18 +35,15 @@ final class HealthService {
     var isAvailable: Bool { access != .unavailable }
 
     #if os(iOS)
-    @ObservationIgnored private let healthStore = HKHealthStore()
+    @ObservationIgnored let healthStore = HKHealthStore()
 
-    private var readTypes: Set<HKObjectType> {
+    var readTypes: Set<HKObjectType> {
         [HKCategoryType(.sleepAnalysis), HKObjectType.workoutType(), HKQuantityType(.restingHeartRate)]
     }
 
-    /// Asks for read access, then syncs.
-    func requestAccess() async {
-        guard access != .unavailable else { return }
-        do {
-            try await healthStore.requestAuthorization(toShare: [], read: readTypes)
-        } catch {
+    /// Called after the permission sheet (shown by `HealthAccessRequest`) closes: remember it, then sync.
+    func accessRequestFinished(_ result: Result<Bool, any Error>) async {
+        if case .failure(let error) = result {
             Log.health.error("Authorization failed: \(error.localizedDescription, privacy: .public)")
         }
         store.defaults.set(true, forKey: DefaultsKey.healthRequested)
@@ -149,7 +146,6 @@ final class HealthService {
         }
     }
     #else
-    func requestAccess() async {}
     func refresh() async {}
     func startObserving() {}
     #endif

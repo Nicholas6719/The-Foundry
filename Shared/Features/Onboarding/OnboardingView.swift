@@ -7,6 +7,7 @@ struct OnboardingView: View {
     @State private var page = 0
     @State private var names: [String] = FoundryStore.defaultHabits.map(\.0)
     @State private var showFocusSetup = false
+    @State private var connectRequests = 0
 
     private var pages: [Int] {
         env.health.isAvailable ? [0, 1, 2, 3] : [0, 1, 3]
@@ -39,6 +40,7 @@ struct OnboardingView: View {
         }
         .background(Palette.bg.ignoresSafeArea())
         .animation(.easeInOut(duration: 0.25), value: page)
+        .healthAccessRequest(trigger: connectRequests) { page = 3 }
         .sheet(isPresented: $showFocusSetup) {
             FocusSetupView { showFocusSetup = false; finish() }
                 .environment(env)
@@ -77,6 +79,11 @@ struct OnboardingView: View {
                         .condensed(24, tracking: 0.06)
                         .foregroundStyle(Palette.text)
                         .accessibilityLabel("Habit \(i + 1)")
+                    // Shows the names can be renamed.
+                    Image(systemName: "pencil")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(Palette.textMuted)
+                        .accessibilityHidden(true)
                 }
                 .padding(.horizontal, 12)
                 .frame(minHeight: 64)
@@ -100,13 +107,8 @@ struct OnboardingView: View {
             Text("Foundry reads your sleep, workouts, and resting heart rate to show your Vitals and power your Recovery bonus. Nothing leaves your devices except your own private iCloud.")
                 .body(17).foregroundStyle(Palette.textMuted)
                 .fixedSize(horizontal: false, vertical: true)
-            Button("CONNECT HEALTH") {
-                Task {
-                    await env.health.requestAccess()
-                    page = 3
-                }
-            }
-            .buttonStyle(PrimaryButtonStyle())
+            Button("CONNECT HEALTH") { connectRequests += 1 }
+                .buttonStyle(PrimaryButtonStyle())
             Button("SKIP FOR NOW") { page = 3 }
                 .buttonStyle(SecondaryButtonStyle(tint: Palette.textMuted, stroke: Palette.line))
         }

@@ -29,6 +29,7 @@
 		20127649385AFEE57C46190D /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5413981D47C6027BD9CFF8 /* MenuBarView.swift */; };
 		22B542BEA255F3B5B3179D71 /* Store+Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6329692A6901BB67B488399 /* Store+Training.swift */; };
 		24C622C03298AAA5812B58CB /* OFL-ibmplexmono.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED54EBA067A9FA89C3E565AA /* OFL-ibmplexmono.txt */; };
+		251EE73D5BF11915F802969D /* HealthAccessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CEF986313892ADCACB5DC /* HealthAccessRequest.swift */; };
 		26C645660B15378ED55D567C /* FoundryCore in Frameworks */ = {isa = PBXBuildFile; productRef = A9E47C7AAC6AA401F7F33D10 /* FoundryCore */; };
 		28D3A8EA6152BD5E3B3656FE /* FoundryCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9F7D983429AA5ECFD4A691F8 /* FoundryCore */; };
 		29ADD0B83A9BE3E7157344B0 /* QuiverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83239D86FB3D65F2EDB7D83 /* QuiverScreen.swift */; };
@@ -119,6 +120,7 @@
 		BC2BC66626E8860D9F74E482 /* BarlowCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64D68EE6EADC2DD3DA6ED55C /* BarlowCondensed-Bold.ttf */; };
 		BD042D329F5C7246E9E5E6E6 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727F2E35E6A5D9C8E4F2DF78 /* Log.swift */; };
 		BF22C9EB91A8156264FFCBBD /* Store+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8368DE7A7D76136714CABE27 /* Store+Snapshot.swift */; };
+		BF27CEF84240E3B6FE0ED656 /* HealthAccessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CEF986313892ADCACB5DC /* HealthAccessRequest.swift */; };
 		BFCC54967534BD13188D863C /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F9BA4AFCA2FE8C609281018 /* Barlow-Regular.ttf */; };
 		C3702D4370F0CBC01998088A /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F9BA4AFCA2FE8C609281018 /* Barlow-Regular.ttf */; };
 		C3FE86B85F4047003F906DE6 /* IBMPlexMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88D6C886D8E856E2FF557567 /* IBMPlexMono-Regular.ttf */; };
@@ -183,6 +185,7 @@
 		3AAB02FA7D45F599B1DD8C8F /* DayClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayClock.swift; sourceTree = "<group>"; };
 		3D7E4EC8CF7A1EB0F81FA15B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3E24733513C417FD6FF079F6 /* RadarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
+		3E5CEF986313892ADCACB5DC /* HealthAccessRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAccessRequest.swift; sourceTree = "<group>"; };
 		3F0250D1FEF19D1AE696E5F1 /* IslandScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandScreen.swift; sourceTree = "<group>"; };
 		446284DF9A49054B0E2987F9 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
 		4DA45A64C2BA1E238B0CA1B0 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
@@ -413,6 +416,7 @@
 		4D74BB3630B9391CA70CC8F6 /* Vitals */ = {
 			isa = PBXGroup;
 			children = (
+				3E5CEF986313892ADCACB5DC /* HealthAccessRequest.swift */,
 				9C18A5D9710347CEBAC66246 /* VitalsParts.swift */,
 				FFC11360DD85F80E6198B5A2 /* VitalsScreen.swift */,
 			);
@@ -755,6 +759,7 @@
 				3B19576B694AD29E35BC9EEC /* HabitButtons.swift in Sources */,
 				7B3846FA84A82E2B5F21E751 /* HabitEditor.swift in Sources */,
 				F33713679193FF8249DA9F16 /* Haptics.swift in Sources */,
+				251EE73D5BF11915F802969D /* HealthAccessRequest.swift in Sources */,
 				7E656BAAE9ACC2688A189676 /* HealthService.swift in Sources */,
 				90D2AD958B12C21DAFF17158 /* HubParts.swift in Sources */,
 				B1BD847E4B696870B4011F39 /* HubScreen.swift in Sources */,
@@ -819,6 +824,7 @@
 				E825BB285059FF364A598505 /* HabitButtons.swift in Sources */,
 				E3AFADF7D6D985853F8BD676 /* HabitEditor.swift in Sources */,
 				4FE07CCF931399D67CD74979 /* Haptics.swift in Sources */,
+				BF27CEF84240E3B6FE0ED656 /* HealthAccessRequest.swift in Sources */,
 				1E378C06C325377F8F00656F /* HealthService.swift in Sources */,
 				9677DE3671304ADEE982AD03 /* HubParts.swift in Sources */,
 				52217EA3E6797940EE9E5E03 /* HubScreen.swift in Sources */,

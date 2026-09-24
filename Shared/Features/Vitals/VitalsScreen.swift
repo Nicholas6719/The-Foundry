@@ -5,6 +5,7 @@ import FoundryCore
 struct VitalsScreen: View {
     @Environment(AppEnvironment.self) private var env
     @State private var explainAccess = false
+    @State private var connectRequests = 0
 
     var body: some View {
         let _ = env.clock.todayKey
@@ -21,6 +22,7 @@ struct VitalsScreen: View {
             }
             content(vitals: vitals, hasAnyData: hasAnyData)
         }
+        .healthAccessRequest(trigger: connectRequests)
         .alert("Check Health access", isPresented: $explainAccess) {
             Button("Open Settings") { URLOpener.openAppSettings() }
             Button("Not now", role: .cancel) {}
@@ -63,7 +65,7 @@ struct VitalsScreen: View {
         case .notDetermined:
             EmptyVitals(title: "CONNECT HEALTH",
                         message: "Foundry reads your sleep, workouts, and resting heart rate from Apple Health to show your Vitals and power your Recovery bonus. It never writes to Health.") {
-                Button("CONNECT HEALTH") { Task { await health.requestAccess() } }
+                Button("CONNECT HEALTH") { connectRequests += 1 }
                     .buttonStyle(PrimaryButtonStyle())
             }
         case .requested:
