@@ -45,7 +45,7 @@ final class IslandController {
 
     // MARK: - Controls
 
-    func start(now: Date = Date()) {
+    func start(now: Date = Date(), runFocusShortcut: Bool = true) {
         guard phase == .idle else { return }
         let minutes = store.profile().focusMinutes
         plannedMinutes = minutes
@@ -57,7 +57,7 @@ final class IslandController {
         persist()
         scheduleCompletion()
         NotificationService.scheduleIslandEnd(at: endDate ?? now, targetName: targetName)
-        focus.sessionStarted()
+        if runFocusShortcut { focus.sessionStarted() }
     }
 
     func pause(now: Date = Date()) {

@@ -110,7 +110,8 @@ enum DemoData {
             let trained = offset == 0 || (inWeek && (offset == -weekStart || offset == -weekStart + 2) && offset < 0)
             let minutes = offset == 0 ? 42 : (offset == -weekStart ? 40 : 46)
             values.append(VitalsValue(dayKey: day(offset), sleep: sleep, restingHR: 58 + abs(offset % 3),
-                                      workoutMinutes: trained ? minutes : 0, workoutCount: trained ? 1 : 0))
+                                      workoutMinutes: trained ? minutes : 0, workoutCount: trained ? 1 : 0,
+                                      longestWorkout: trained ? minutes : 0))
         }
         store.upsertVitals(values)
         store.defaults.set(Date(), forKey: DefaultsKey.healthLastSync)

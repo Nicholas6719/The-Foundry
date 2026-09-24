@@ -162,6 +162,9 @@ struct MacDashboard: View {
         .frame(maxHeight: .infinity)
         .card(radius: 18)
         .onTapGesture { env.router.macSection = .vitals }
+        .keyboardActivatable { env.router.macSection = .vitals }
+        .accessibilityAddTraits(.isButton)
+        .accessibilityHint("Opens Vitals")
     }
 
     @ViewBuilder

@@ -59,23 +59,44 @@ extension FoundryStore {
         let habits = activeHabits()
         let firedIDs = Set(logs(on: dayKey).map(\.habitID))
         let done = habits.filter { firedIDs.contains($0.id) }.count
-        let summaries = fetch(FetchDescriptor<DaySummary>(predicate: #Predicate { $0.dayKey == dayKey }))
-        let summary = summaries.first ?? {
+        // Synced copies of the same day are all kept in step rather than deleted, so two devices
+        // can never remove each other's history.
+        var summaries = fetch(FetchDescriptor<DaySummary>(predicate: #Predicate { $0.dayKey == dayKey }))
+        if summaries.isEmpty {
             let s = DaySummary(dayKey: dayKey)
             context.insert(s)
-            return s
-        }()
-        summaries.dropFirst().forEach(context.delete)
-        let was = summary.isBullseye
-        summary.habitsTotal = habits.count
-        summary.habitsDone = done
-        summary.isBullseye = StreakRules.isBullseye(total: habits.count, done: done)
-        if summary.isBullseye {
+            summaries = [s]
+        }
+        let was = summaries.contains(where: \.isBullseye)
+        let isBullseye = StreakRules.isBullseye(total: habits.count, done: done)
+        for summary in summaries {
+            summary.habitsTotal = habits.count
+            summary.habitsDone = done
+            summary.isBullseye = isBullseye
+        }
+        if isBullseye {
             award(.bullseye, refKey: dayKey, base: GameRules.bullseyeXP, dayKey: dayKey)
         } else {
             revoke(.bullseye, refKey: dayKey)
         }
-        return summary.isBullseye && !was
+        let became = isBullseye && !was
+        // The bullseye moment plays however the last arrow was fired (by hand or by an auto rule).
+        if became, dayKey == todayKey { onBullseye?() }
+        return became
+    }
+
+    /// If two devices both seeded the same starting habits before syncing, archive the copies.
+    /// Every device keeps the same one (lowest id), so they agree after sync.
+    func resolveSyncDuplicates() {
+        let groups = Dictionary(grouping: activeHabits()) { "\($0.name.lowercased())|\($0.glyph)" }
+        var changed = false
+        for (_, copies) in groups where copies.count > 1 {
+            for extra in copies.sorted(by: { $0.id.uuidString < $1.id.uuidString }).dropFirst() {
+                extra.isArchived = true
+                changed = true
+            }
+        }
+        if changed { updateDaySummary(for: todayKey) }
     }
 
     // MARK: - Streak
@@ -96,7 +117,7 @@ extension FoundryStore {
             guard !isSuppressed(habit: habit, day: today) else { continue }
             let eligible: Bool = switch habit.rule {
             case .none: false
-            case .workout: (vitals?.workoutMinutes ?? 0) >= GameRules.workoutAutoFireMinutes || trained
+            case .workout: (vitals?.longestWorkoutMin ?? 0) >= GameRules.workoutAutoFireMinutes || trained
             case .sleepDuration: (vitals?.sleepMinutes ?? 0) >= max(1, habit.autoThresholdMinutes)
             }
             if eligible {

@@ -90,6 +90,9 @@ struct BuildDaySheet: View {
             .frame(maxWidth: .infinity)
         }
         .background(Palette.bg)
+        #if os(macOS)
+        .frame(minWidth: 560, minHeight: 640)
+        #endif
         .onAppear(perform: load)
         .confirmationDialog("Delete this day and its lifts?", isPresented: $confirmDelete, titleVisibility: .visible) {
             Button("Delete Day", role: .destructive) {

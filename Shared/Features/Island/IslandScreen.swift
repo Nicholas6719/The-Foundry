@@ -63,8 +63,13 @@ struct IslandScreen: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .background(Palette.bgDeep.ignoresSafeArea())
+        #if os(iOS)
+        // The Island covers the tab shell, so rank and medal banners are shown here too.
+        .overlay(alignment: .top) { CelebrationOverlay() }
+        #endif
         .onAppear(perform: appeared)
         .onDisappear(perform: disappeared)
+        .onChange(of: env.router.autoStartIsland) { consumeAutoStart() }
         .onChange(of: island.completions) {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.5)) { flash = true }
             withAnimation(.easeOut(duration: 0.4).delay(0.3)) { flash = false }
@@ -143,16 +148,20 @@ struct IslandScreen: View {
 
     private func appeared() {
         if env.island.targetID == nil { env.island.targetID = env.store.openPrimary()?.id }
-        if env.router.autoStartIsland {
-            env.router.autoStartIsland = false
-            if !env.island.isActive { begin() }
-        }
+        consumeAutoStart()
         #if os(iOS)
         UIApplication.shared.isIdleTimerDisabled = true
         #else
         activity = ProcessInfo.processInfo.beginActivity(options: [.idleDisplaySleepDisabled, .userInitiated],
                                                          reason: "Island session on screen")
         #endif
+    }
+
+    /// "Start a session" requests (mission arrow, ⌘⇧I) whether or not the Island is already showing.
+    private func consumeAutoStart() {
+        guard env.router.autoStartIsland else { return }
+        env.router.autoStartIsland = false
+        if !env.island.isActive { begin() }
     }
 
     private func disappeared() {

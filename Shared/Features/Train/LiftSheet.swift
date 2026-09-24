@@ -59,6 +59,11 @@ struct LiftSheet: View {
             .frame(maxWidth: .infinity)
         }
         .background(Palette.bg)
+        // Rung Four and rank-ups usually land here, so their banner shows on top of the sheet.
+        .overlay(alignment: .top) { CelebrationOverlay() }
+        #if os(macOS)
+        .frame(minWidth: 520, minHeight: 600)
+        #endif
     }
 
     private func setDot(index: Int, log: SetLog?) -> some View {
@@ -87,6 +92,9 @@ struct LiftSheet: View {
         .onLongPressGesture(minimumDuration: 0.4) {
             reps = log?.repsDone ?? lift.reps
             withAnimation(.snappy) { adjusting = index }
+        }
+        .keyboardActivatable {
+            if done { env.clearSet(lift, index: index) } else { record(env.logSet(lift, index: index)) }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Set \(index + 1)")

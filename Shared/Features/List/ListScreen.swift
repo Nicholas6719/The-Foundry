@@ -61,6 +61,7 @@ struct ListScreen: View {
     }
 
     var body: some View {
+        let _ = env.clock.todayKey // due tags ("TODAY", "FRI") roll over at midnight
         let struck = allTargets.filter(\.isStruck).count
         ScreenScroll {
             ScreenHeader {

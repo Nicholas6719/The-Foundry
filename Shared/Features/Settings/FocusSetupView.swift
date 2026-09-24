@@ -59,9 +59,10 @@ struct FocusSetupView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 10) {
+                    // Stays tappable: if a shortcut never calls back (cancelled prompt, app switcher),
+                    // tapping again simply restarts the test.
                     Button(testLabel(focus.testState)) { focus.runTest() }
                         .buttonStyle(PrimaryButtonStyle())
-                        .disabled(focus.testState == .runningOn || focus.testState == .runningOff)
                     testResult(focus.testState)
                 }
             }
@@ -70,6 +71,10 @@ struct FocusSetupView: View {
             .frame(maxWidth: .infinity)
         }
         .background(Palette.bg)
+        .onAppear { focus.resetTest() }
+        #if os(macOS)
+        .frame(minWidth: 520, minHeight: 620)
+        #endif
     }
 
     private func testLabel(_ state: FocusService.TestState) -> String {

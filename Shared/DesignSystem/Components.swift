@@ -30,6 +30,24 @@ extension View {
     }
 }
 
+// MARK: - Keyboard
+
+extension View {
+    /// Lets a tap-gesture control be reached with Tab and triggered with Space or Return on the Mac.
+    func keyboardActivatable(_ action: @escaping () -> Void) -> some View {
+        #if os(macOS)
+        return self
+            .focusable()
+            .onKeyPress(keys: [.space, .return]) { _ in
+                action()
+                return .handled
+            }
+        #else
+        return self
+        #endif
+    }
+}
+
 // MARK: - Chip
 
 /// The rounded pill used at the top right of every screen.

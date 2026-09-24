@@ -123,5 +123,7 @@ struct TargetOrderingTests {
             t("primaryToday", created: 1, due: Fixture.date(2026, 9, 24, 12), primary: true),
         ]
         #expect(TargetOrdering.dueTodayOrOverdue(targets, now: now, keys: keys) == 4)
+        // Mission line counts only today's: early, late and primary; not overdue, tomorrow or struck.
+        #expect(TargetOrdering.dueToday(targets, now: now, keys: keys) == 3)
     }
 }

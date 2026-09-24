@@ -1,3 +1,4 @@
+import CoreData
 import Foundation
 import SwiftData
 import FoundryCore
@@ -117,21 +118,25 @@ final class AppEnvironment {
     let router = Router()
     /// Bumps on each bullseye so the hub emblem can pulse.
     private(set) var bullseyePulse = 0
+    @ObservationIgnored private var remoteChangeObserver: NSObjectProtocol?
+    @ObservationIgnored private var remoteRefreshTask: Task<Void, Never>?
+    /// With iCloud on, first-run onboarding waits briefly for another device's data to arrive,
+    /// so a second device doesn't seed a duplicate set of habits.
+    private(set) var syncGraceOver: Bool
 
     // MARK: - Actions with feedback (haptics, moments)
 
     func fire(_ habit: Habit) {
-        let result = store.fire(habit)
-        switch result {
-        case .bullseye:
-            celebrations.hold(for: 1.4)
-            bullseyePulse += 1
-            Haptics.success()
-        case .fired:
-            Haptics.fire()
-        case .ignored:
-            break
-        }
+        // A bullseye plays its own moment through `store.onBullseye`.
+        if store.fire(habit) == .fired { Haptics.fire() }
+    }
+
+    /// The bullseye moment: ring completes, emblem pulses, success haptic, toasts wait their turn.
+    private func bullseyeMoment() {
+        guard celebrations.isEnabled else { return }
+        celebrations.hold(for: 1.4)
+        bullseyePulse += 1
+        Haptics.success()
     }
 
     func undo(_ habit: Habit) {
@@ -169,6 +174,7 @@ final class AppEnvironment {
         FoundryFont.registerAll()
         let inMemory = ProcessInfo.processInfo.arguments.contains("-FoundryInMemory")
         (container, syncState) = PersistenceController.makeContainer(inMemory: inMemory)
+        syncGraceOver = syncState != .iCloud
         store = FoundryStore(context: container.mainContext, celebrations: celebrations)
         health = HealthService(store: store)
         island = IslandController(store: store, focus: focus)
@@ -182,7 +188,44 @@ final class AppEnvironment {
         clock.onDayChange = { [store] in store.refreshToday() }
         if store.defaults.object(forKey: DefaultsKey.lastCelebratedRank) == nil { store.markRankSeen() }
         applyLaunchArguments()
+        store.onBullseye = { [weak self] in self?.bullseyeMoment() }
         store.refreshToday()
+        health.startObserving()
+        observeRemoteChanges()
+        if !syncGraceOver {
+            Task { [weak self] in
+                try? await Task.sleep(for: .seconds(8))
+                self?.syncGraceOver = true
+            }
+        }
+    }
+
+    /// First run, once any synced profile from another device has had a chance to arrive.
+    var needsOnboarding: Bool {
+        _ = store.revision
+        return syncGraceOver && !store.profile().hasOnboarded
+    }
+
+    /// iCloud delivered changes from another device: recompute today and redraw.
+    private func observeRemoteChanges() {
+        guard syncState == .iCloud else { return }
+        remoteChangeObserver = NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange, object: nil, queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated { self?.scheduleRemoteRefresh() }
+        }
+    }
+
+    /// Imports arrive in bursts; refresh once they settle.
+    private func scheduleRemoteRefresh() {
+        remoteRefreshTask?.cancel()
+        remoteRefreshTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(600))
+            guard !Task.isCancelled, let self else { return }
+            self.store.resolveSyncDuplicates()
+            self.store.refreshToday()
+            self.store.touch()
+        }
     }
 
     /// Foreground: roll the day, catch a finished Island session, pull fresh Health data.

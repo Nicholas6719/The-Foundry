@@ -89,8 +89,12 @@ final class HealthService {
                 if let error {
                     Log.health.error("Observer error: \(error.localizedDescription, privacy: .public)")
                 }
-                completion()
-                Task { @MainActor in await self?.refresh() }
+                // Tell HealthKit we're done only after the refresh, so iOS doesn't suspend us mid-read.
+                let done = CompletionBox(completion)
+                Task { @MainActor in
+                    await self?.refresh()
+                    done.call()
+                }
             }
             healthStore.execute(query)
             healthStore.enableBackgroundDelivery(for: type, frequency: .immediate) { ok, error in
@@ -99,6 +103,13 @@ final class HealthService {
                 }
             }
         }
+    }
+
+    /// HealthKit's observer completion handler isn't marked Sendable; it is safe to call from any thread.
+    nonisolated private final class CompletionBox: @unchecked Sendable {
+        private let handler: HKObserverQueryCompletionHandler
+        init(_ handler: @escaping HKObserverQueryCompletionHandler) { self.handler = handler }
+        func call() { handler() }
     }
 
     private func sleepSamples(from start: Date, to end: Date) async throws -> [SleepSample] {
@@ -156,7 +167,8 @@ final class HealthService {
             let hr = (heartByDay[day] ?? heartByDay[keys.adding(-1, to: day)])?.max { $0.0 < $1.0 }?.1
             return VitalsValue(dayKey: day, sleep: summary, restingHR: hr,
                                workoutMinutes: Int((dayWorkouts.reduce(0) { $0 + $1.1 } / 60).rounded()),
-                               workoutCount: dayWorkouts.count)
+                               workoutCount: dayWorkouts.count,
+                               longestWorkout: Int(((dayWorkouts.map(\.1).max() ?? 0) / 60).rounded()))
         }
     }
 }

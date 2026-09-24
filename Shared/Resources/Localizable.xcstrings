@@ -749,6 +749,17 @@
         }
       }
     },
+    "Delete Name": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Delete Name"
+          }
+        }
+      }
+    },
     "Delete this day and its lifts?": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -756,6 +767,17 @@
           "stringUnit": {
             "state": "new",
             "value": "Delete this day and its lifts?"
+          }
+        }
+      }
+    },
+    "Delete this name?": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Delete this name?"
           }
         }
       }
@@ -1222,6 +1244,17 @@
         }
       }
     },
+    "It comes off the List for good. XP already earned for striking it stays.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "It comes off the List for good. XP already earned for striking it stays."
+          }
+        }
+      }
+    },
     "LATER": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -1647,6 +1680,17 @@
           "stringUnit": {
             "state": "new",
             "value": "Opens Rank"
+          }
+        }
+      }
+    },
+    "Opens Vitals": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Opens Vitals"
           }
         }
       }
@@ -2230,6 +2274,17 @@
           "stringUnit": {
             "state": "new",
             "value": "Thursday"
+          }
+        }
+      }
+    },
+    "To start the Island whenever you turn the Foundry Focus on yourself, add the \"Foundry behavior\" filter in Settings › Focus › Foundry and switch it on.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "To start the Island whenever you turn the Foundry Focus on yourself, add the \"Foundry behavior\" filter in Settings › Focus › Foundry and switch it on."
           }
         }
       }

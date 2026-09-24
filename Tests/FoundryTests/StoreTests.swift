@@ -79,6 +79,55 @@ struct HabitStoreTests {
         #expect(!store.isFired(habit, on: store.todayKey))
     }
 
+    @Test func workoutRuleNeedsOneTwentyMinuteWorkout() {
+        let store = makeStore()
+        store.seedHabits([("Train", .dumbbell)])
+        let habit = store.activeHabits()[0]
+        // Two 10-minute walks add up to 20 but no single workout reaches it.
+        store.upsertVitals([VitalsValue(dayKey: store.todayKey, sleep: SleepSummary(), restingHR: nil,
+                                        workoutMinutes: 20, workoutCount: 2, longestWorkout: 10)])
+        #expect(!store.isFired(habit, on: store.todayKey))
+        store.upsertVitals([VitalsValue(dayKey: store.todayKey, sleep: SleepSummary(), restingHR: nil,
+                                        workoutMinutes: 45, workoutCount: 3, longestWorkout: 25)])
+        #expect(store.isFired(habit, on: store.todayKey))
+    }
+
+    @Test func autoFiredLastArrowPlaysTheBullseyeMoment() {
+        let store = makeStore()
+        var moments = 0
+        store.onBullseye = { moments += 1 }
+        store.seedHabits([("Sleep", .moon)])
+        store.upsertVitals([VitalsValue(dayKey: store.todayKey, sleep: SleepSummary(deep: 60, core: 300, rem: 90, awake: 10),
+                                        restingHR: nil, workoutMinutes: 0, workoutCount: 0)])
+        #expect(moments == 1)
+        // That night also earns the Recovery bonus, so check the award itself rather than the total.
+        #expect(store.events(.bullseye, refKey: store.todayKey).count == 1)
+    }
+
+    @Test func duplicateProfilesResolveTheSameWayEverywhere() {
+        let store = makeStore()
+        let older = Profile()
+        older.createdAt = StoreFixture.noon.addingTimeInterval(-3600)
+        older.sleepGoalMinutes = 450
+        let newer = Profile()
+        newer.createdAt = StoreFixture.noon
+        newer.hasOnboarded = true
+        store.context.insert(newer)
+        store.context.insert(older)
+        let winner = store.profile()
+        #expect(winner.sleepGoalMinutes == 450)
+        #expect(winner.hasOnboarded)
+        #expect(store.all(Profile.self).count == 1)
+    }
+
+    @Test func duplicateSeededHabitsAreArchived() {
+        let store = makeStore()
+        store.seedHabits([("Read", .book)])
+        store.context.insert(Habit(name: "Read", glyph: HabitGlyph.book.rawValue, sortOrder: 1))
+        store.resolveSyncDuplicates()
+        #expect(store.activeHabits().count == 1)
+    }
+
     @Test func habitLimitIsSix() {
         let store = makeStore()
         for i in 0..<6 { #expect(store.addHabit(name: "H\(i)", glyph: .pen) != nil) }
@@ -187,6 +236,10 @@ struct TrainingFocusTests {
         store.seedHabits([("Eat", .fork), ("Read", .book)])
         store.addTarget(title: "A", dueDate: StoreFixture.noon, primary: false)
         #expect(store.snapshot().mission == "Strike one name. Fire two arrows. Hold the Island.")
+        // Overdue names light the hub's red dot but aren't counted as "due today" in the mission.
+        store.addTarget(title: "Old", dueDate: StoreFixture.noon.addingTimeInterval(-3 * 86_400), primary: false)
+        #expect(store.snapshot().mission == "Strike one name. Fire two arrows. Hold the Island.")
+        #expect(store.snapshot().dueToday == 2)
     }
 }
 

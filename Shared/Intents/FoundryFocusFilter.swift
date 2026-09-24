@@ -26,7 +26,8 @@ struct FoundryFocusFilter: SetFocusFilterIntent {
             env.focus.filterReported(active: true)
             env.store.profile().focusAutoStartFromFilter = true
             env.store.save()
-            if !env.island.isActive { env.island.start() }
+            // The Focus is already on, so don't run the "Foundry Focus On" shortcut again.
+            if !env.island.isActive { env.island.start(runFocusShortcut: false) }
         }
         Log.focus.info("Focus filter performed, startIsland=\(startIslandWhenOn)")
         return .result()

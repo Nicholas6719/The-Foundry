@@ -43,6 +43,9 @@ struct HabitButtonsView: View {
 /// iPhone: the Quiver.
 struct QuiverScreen: View {
     @Environment(AppEnvironment.self) private var env
+    #if os(macOS)
+    @Environment(\.openSettings) private var openSettings
+    #endif
     @State private var appeared = false
 
     var body: some View {
@@ -66,7 +69,13 @@ struct QuiverScreen: View {
             if states.isEmpty {
                 VStack(spacing: 12) {
                     Text("No arrows in the quiver yet.").body(17, weight: .medium).foregroundStyle(Palette.text)
-                    Button("ADD HABITS") { env.router.showSettings = true }
+                    Button("ADD HABITS") {
+                        #if os(macOS)
+                        openSettings()
+                        #else
+                        env.router.showSettings = true
+                        #endif
+                    }
                         .buttonStyle(SecondaryButtonStyle())
                 }
                 .frame(maxWidth: .infinity)

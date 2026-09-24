@@ -134,11 +134,11 @@ struct SettingsView: View {
             row("Foundry Focus", value: env.focus.isConfigured ? "Set up" : "Not set up")
             Button(env.focus.isConfigured ? "Setup and Test" : "Set Up Foundry Focus") { sheet = .focus }
                 .listRowBackground(Palette.surface)
-            if let profile = profiles.first, profile.focusAutoStartFromFilter {
-                row("Focus filter", value: "Starts the Island")
-            }
         } header: {
             MonoTitle(text: "FOCUS")
+        } footer: {
+            Text("To start the Island whenever you turn the Foundry Focus on yourself, add the \"Foundry behavior\" filter in Settings › Focus › Foundry and switch it on.")
+                .foregroundStyle(Palette.textMuted)
         }
     }
 

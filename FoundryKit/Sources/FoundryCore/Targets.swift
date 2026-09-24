@@ -61,7 +61,16 @@ public enum TargetOrdering {
         return primary + others + struckSorted
     }
 
-    /// Open targets due today or earlier.
+    /// Open targets due exactly today (the mission line's "Strike N names").
+    public static func dueToday(_ targets: [TargetSnapshot], now: Date, keys: DayKeys = DayKeys()) -> Int {
+        let today = keys.key(for: now)
+        return targets.filter { t in
+            guard t.struckAt == nil, let due = t.dueDate else { return false }
+            return keys.key(for: due) == today
+        }.count
+    }
+
+    /// Open targets due today or earlier (the hub's red dot).
     public static func dueTodayOrOverdue(_ targets: [TargetSnapshot], now: Date, keys: DayKeys = DayKeys()) -> Int {
         let today = keys.key(for: now)
         return targets.filter { t in

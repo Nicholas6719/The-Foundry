@@ -72,6 +72,7 @@ struct LeadLiftCard: View {
         .card()
         .contentShape(Rectangle())
         .onTapGesture(perform: onOpen)
+        .keyboardActivatable(onOpen)
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(.isButton)
         .accessibilityHint("Opens set logging for \(lift.name)")

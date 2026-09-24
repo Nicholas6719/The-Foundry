@@ -13,6 +13,9 @@ enum FoundrySchemaV1: VersionedSchema {
     }
 
     @Model final class Profile {
+        /// With sync, two devices can each create a profile; the oldest (then lowest id) wins everywhere.
+        var id: UUID = UUID()
+        var createdAt: Date = Date()
         var sleepGoalMinutes: Int = 480
         var weeklyWorkoutGoal: Int = 4
         var focusMinutes: Int = 25
@@ -167,6 +170,8 @@ enum FoundrySchemaV1: VersionedSchema {
         var restingHR: Int?
         var workoutMinutes: Int = 0
         var workoutCount: Int = 0
+        /// Longest single workout that day, for the "workout ≥ 20 min" auto rule.
+        var longestWorkoutMin: Int = 0
         var recovery: Int?
         var updatedAt: Date = Date()
 

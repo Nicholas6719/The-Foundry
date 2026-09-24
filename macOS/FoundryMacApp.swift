@@ -7,7 +7,8 @@ struct FoundryMacApp: App {
     @State private var env = AppEnvironment.shared
 
     var body: some Scene {
-        WindowGroup("Foundry", id: "main") {
+        // A single window: the menu bar's "open Foundry" brings it forward instead of stacking copies.
+        Window("Foundry", id: "main") {
             MacRootView()
                 .environment(env)
                 .modelContainer(env.container)

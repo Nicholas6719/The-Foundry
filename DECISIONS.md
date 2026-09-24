@@ -10,7 +10,17 @@ Choices made where the spec was silent or had to bend. One line each: decision, 
 - Caveat ships only as a variable font, so `scripts/make-caveat-bold.py` bakes a static Bold (wght 700) instance. Why: reliable weight on both platforms.
 - String catalog is filled from the compiler's extracted strings with `scripts/update-strings.py`. Why: command-line builds don't sync the catalog the way the Xcode editor does.
 
+## iCloud sync safety
+- When sync produces two copies of the profile, every device keeps the oldest one (then the lowest id) and merges the on/off flags into it. Why: devices must agree on the winner, or each deletes the other's copy.
+- Synced copies of a day summary or a day's vitals are all updated together, never deleted. Why: deleting "extras" on two devices at once could wipe history.
+- If two devices both seeded the starting habits, identical copies (same name and icon) are archived, keeping the lowest id. Why: stops the Quiver doubling to eight arrows.
+- With iCloud on, first-run onboarding waits up to 8 seconds for another device's data. Why: a second device shouldn't re-onboard or re-seed.
+- Screens refresh when iCloud delivers changes from the other device.
+
 ## Game rules
+- The workout auto rule needs one workout of 20+ minutes; several short ones don't add up. Why: spec says "a workout ≥ 20 min".
+- "Strike N names" in the mission counts names due today only; overdue names still light the List's red dot.
+- The bullseye moment (pulse, haptic, toasts held back) plays whether the last arrow was fired by hand or by an auto rule.
 - Any undo of a habit (manual or auto) stops auto rules re-firing it that day. Why: otherwise undo would be pointless for auto habits.
 - A lift that climbs shows the new rung straight away ("CLIMBED FROM 155") while today's sets stay logged at the old weight. Why: the spec's "bar slides up one rung" animation needs the new rung on screen.
 - Undoing a set on the same day that broke a climb steps the rung back and removes the record XP. Why: fixes mis-taps; missing reps still never drops a rung.
@@ -30,6 +40,6 @@ Choices made where the spec was silent or had to bend. One line each: decision, 
 - The Island's target name is a menu of open names (default: primary).
 - The menu bar popover shows the first four habits (the mockup's four slots).
 - The Mac dashboard scrolls if the window is shorter than both rows.
-- The Focus Filter only acts on its "on" call (the "off" call arrives with default values, so it can't be told apart). It sets the pill to On and, if its switch is on, starts a session.
+- The Focus Filter only acts when its "Start the Island" switch is on: then it marks the pill On and starts a session without re-running the On shortcut. The system's "off" call arrives with default values, so with the switch off the two calls can't be told apart and the filter does nothing.
 - Wizard step A (create the Focus) is marked done by you, since apps can't see Focus settings. Steps B and C are confirmed by the Test.
 - Menu bar "Begin focus" on the very first session opens the Island window so the one-line notification reason is shown before the system prompt.

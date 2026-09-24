@@ -9,6 +9,7 @@ struct VitalsValue: Equatable {
     var restingHR: Int?
     var workoutMinutes: Int
     var workoutCount: Int
+    var longestWorkout: Int = 0
 }
 
 extension FoundryStore {
@@ -24,27 +25,32 @@ extension FoundryStore {
         let goal = profile().sleepGoalMinutes
         for value in values {
             let dayKey = value.dayKey
-            let matches = fetch(FetchDescriptor<DailyVitals>(predicate: #Predicate { $0.dayKey == dayKey }))
-            let record = matches.first ?? {
+            var matches = fetch(FetchDescriptor<DailyVitals>(predicate: #Predicate { $0.dayKey == dayKey }))
+            let unchanged = !matches.isEmpty && matches.allSatisfy { record in
+                record.sleep == value.sleep && record.restingHR == value.restingHR
+                    && record.workoutMinutes == value.workoutMinutes && record.workoutCount == value.workoutCount
+                    && record.longestWorkoutMin == value.longestWorkout
+            }
+            if unchanged { continue }
+            if matches.isEmpty {
                 let v = DailyVitals(dayKey: dayKey)
                 context.insert(v)
-                return v
-            }()
-            matches.dropFirst().forEach(context.delete)
-            let unchanged = record.sleep == value.sleep && record.restingHR == value.restingHR
-                && record.workoutMinutes == value.workoutMinutes && record.workoutCount == value.workoutCount
-                && matches.first != nil
-            if unchanged { continue }
-            record.sleepMinutes = value.sleep.asleep
-            record.deepMin = value.sleep.deep
-            record.coreMin = value.sleep.core
-            record.remMin = value.sleep.rem
-            record.awakeMin = value.sleep.awake
-            record.restingHR = value.restingHR
-            record.workoutMinutes = value.workoutMinutes
-            record.workoutCount = value.workoutCount
-            record.recovery = RecoveryRules.score(value.sleep, goalMinutes: goal)
-            record.updatedAt = now()
+                matches = [v]
+            }
+            // Synced copies are kept in step rather than deleted.
+            for record in matches {
+                record.sleepMinutes = value.sleep.asleep
+                record.deepMin = value.sleep.deep
+                record.coreMin = value.sleep.core
+                record.remMin = value.sleep.rem
+                record.awakeMin = value.sleep.awake
+                record.restingHR = value.restingHR
+                record.workoutMinutes = value.workoutMinutes
+                record.workoutCount = value.workoutCount
+                record.longestWorkoutMin = value.longestWorkout
+                record.recovery = RecoveryRules.score(value.sleep, goalMinutes: goal)
+                record.updatedAt = now()
+            }
             applyMultiplier(forDay: dayKey)
         }
         autoFireEligibleHabits()

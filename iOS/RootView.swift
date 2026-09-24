@@ -19,6 +19,7 @@ struct RootView: View {
             FoundryTabBar(selection: $router.tab) { router.showRank = false }
         }
         .background(Palette.bg.ignoresSafeArea())
+        .onChange(of: router.tab) { router.showRank = false }
         .overlay(alignment: .top) { CelebrationOverlay() }
         .fullScreenCover(isPresented: $router.showIsland) {
             IslandScreen { router.showIsland = false }
@@ -49,7 +50,7 @@ struct RootView: View {
 
     private var onboardingBinding: Binding<Bool> {
         Binding(
-            get: { _ = env.store.revision; return !env.store.profile().hasOnboarded },
+            get: { env.needsOnboarding },
             set: { _ in }
         )
     }

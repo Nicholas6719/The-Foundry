@@ -42,7 +42,7 @@ struct MacRootView: View {
     }
 
     private var onboardingBinding: Binding<Bool> {
-        Binding(get: { _ = env.store.revision; return !env.store.profile().hasOnboarded }, set: { _ in })
+        Binding(get: { env.needsOnboarding }, set: { _ in })
     }
 }
 

@@ -13,6 +13,8 @@ final class FoundryStore {
     @ObservationIgnored var now: () -> Date
     /// Bumps after every save or remote change. Views read it to recompute derived numbers.
     private(set) var revision = 0
+    /// Called when today just became a bullseye, whatever fired the last arrow.
+    @ObservationIgnored var onBullseye: (() -> Void)?
 
     init(context: ModelContext, keys: DayKeys = DayKeys(), celebrations: CelebrationCenter,
          defaults: UserDefaults = .standard, now: @escaping () -> Date = { Date() }) {
@@ -61,10 +63,13 @@ final class FoundryStore {
 
     // MARK: - Profile
 
-    /// The singleton profile. Sync can briefly produce two; the first one wins and flags merge.
+    /// The singleton profile. Sync can briefly produce two; every device picks the same winner
+    /// (oldest, then lowest id), merges the flags into it and removes the rest.
     @discardableResult
     func profile() -> Profile {
-        let profiles = all(Profile.self)
+        let profiles = all(Profile.self).sorted {
+            ($0.createdAt, $0.id.uuidString) < ($1.createdAt, $1.id.uuidString)
+        }
         if let first = profiles.first {
             for extra in profiles.dropFirst() {
                 first.hasOnboarded = first.hasOnboarded || extra.hasOnboarded
@@ -94,6 +99,7 @@ final class FoundryStore {
     /// Runs when the app becomes active or the day rolls over.
     func refreshToday() {
         profile()
+        resolveSyncDuplicates()
         updateDaySummary(for: todayKey)
         autoFireEligibleHabits()
         evaluateMedals()

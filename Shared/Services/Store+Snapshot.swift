@@ -64,7 +64,7 @@ extension FoundryStore {
         s.vitalsSynced = (vitals(for: today)?.sleepMinutes ?? 0) > 0
 
         s.mission = MissionRules.line(MissionInput(
-            targetsDueToday: s.dueToday,
+            targetsDueToday: TargetOrdering.dueToday(targets.map(\.snapshot), now: now(), keys: keys),
             habitsTotal: s.habitsTotal,
             habitsLeft: s.habitsTotal - s.habitsDone,
             workoutScheduledAndNotDone: s.train == .pending && scheduled != nil,
