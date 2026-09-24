@@ -6,17 +6,19 @@ struct HabitState: Identifiable {
     var habit: Habit
     var fired: Bool
     var isAuto: Bool
+    var firedAt: Date? = nil
     var id: UUID { habit.id }
 }
 
 extension FoundryStore {
-    /// Active habits with today's fire state, plus fired count in fire order.
+    /// Active habits with today's fire state.
     func habitStates() -> [HabitState] {
         let today = todayKey
         let logs = logs(on: today)
         return activeHabits().map { habit in
             let log = logs.first { $0.habitID == habit.id }
-            return HabitState(habit: habit, fired: log != nil, isAuto: log?.source == LogSource.auto.rawValue)
+            return HabitState(habit: habit, fired: log != nil, isAuto: log?.source == LogSource.auto.rawValue,
+                              firedAt: log?.firedAt)
         }
     }
 }
@@ -64,7 +66,7 @@ struct QuiverScreen: View {
                 .accessibilityLabel("\(snap.habitsDone) of \(snap.habitsTotal) arrows fired")
             }
             TargetBoard(fired: snap.habitsDone, total: snap.habitsTotal, animateNew: appeared)
-                .frame(maxWidth: 300)
+                .frame(maxWidth: 250)
                 .frame(maxWidth: .infinity)
             if states.isEmpty {
                 VStack(spacing: 12) {
@@ -80,14 +82,9 @@ struct QuiverScreen: View {
                 }
                 .frame(maxWidth: .infinity)
             } else {
-                HabitButtonsView(states: states)
-                    .padding(.horizontal, 4)
-                    .padding(.top, 4)
+                QuiverRack(states: states)
             }
-            WeekTargets(week: snap.week, todayIndex: snap.todayIndex)
-                .padding(.horizontal, 8)
-                .padding(.top, 12)
-                .overlay(alignment: .top) { Rectangle().fill(Palette.line).frame(height: 1) }
+            WeekCard(week: snap.week, todayIndex: snap.todayIndex, streak: snap.streak)
         }
         .onAppear { DispatchQueue.main.async { appeared = true } }
     }

@@ -158,8 +158,11 @@ struct NotebookRow: View {
         Text(target.title)
             .script(nameSize)
             .foregroundStyle(target.isStruck ? Palette.inkFaded : Palette.ink)
-            .lineLimit(1)
-            .minimumScaleFactor(0.6)
+            // Open names wrap rather than truncate at large text sizes; struck names stay on one line
+            // (shrinking if needed) so the strike runs through the words.
+            .lineLimit(target.isStruck ? 1 : 2)
+            .minimumScaleFactor(target.isStruck ? 0.5 : 0.8)
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.trailing, 4) // Caveat's slant overhangs its advance width
             .overlay {
                 GeometryReader { geo in

@@ -78,21 +78,36 @@ struct StageBar: View {
             .background(Palette.line)
             .clipShape(RoundedRectangle(cornerRadius: height / 2))
             if showLegend {
-                HStack {
-                    ForEach(segments, id: \.0) { seg in
-                        Text("\(seg.0) \(SleepBuilder.formatClock(minutes: seg.1))")
-                            .mono(11, tracking: 0.06)
-                            .foregroundStyle(Palette.textMuted)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                        if seg.0 != "AWAKE" { Spacer(minLength: 4) }
+                // One row normally; two rows of two at large text sizes.
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 8) {
+                        ForEach(segments, id: \.0) { seg in
+                            legend(seg, dot: false)
+                            if seg.0 != "AWAKE" { Spacer(minLength: 0) }
+                        }
                     }
+                    Grid(alignment: .leading, horizontalSpacing: 24, verticalSpacing: 6) {
+                        GridRow { legend(segments[0]); legend(segments[1]) }
+                        GridRow { legend(segments[2]); legend(segments[3]) }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Sleep stages")
         .accessibilityValue(segments.map { "\($0.0.lowercased()) \($0.1 / 60) hours \($0.1 % 60) minutes" }.joined(separator: ", "))
+    }
+
+    /// A color key dot plus `DEEP 1:20`.
+    private func legend(_ seg: (String, Int, Color), dot: Bool = true) -> some View {
+        HStack(spacing: 6) {
+            if dot { Circle().fill(seg.2).frame(width: 7, height: 7) }
+            Text("\(seg.0) \(SleepBuilder.formatClock(minutes: seg.1))")
+                .mono(11, tracking: 0.06)
+                .foregroundStyle(Palette.textMuted)
+                .fixedSize()
+        }
     }
 }
 

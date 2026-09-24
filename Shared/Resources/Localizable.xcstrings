@@ -969,6 +969,17 @@
         }
       }
     },
+    "FIRE": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "FIRE"
+          }
+        }
+      }
+    },
     "FOUNDRY": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -1750,6 +1761,17 @@
         }
       }
     },
+    "PAUSED": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "PAUSED"
+          }
+        }
+      }
+    },
     "PUSH": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -1757,6 +1779,28 @@
           "stringUnit": {
             "state": "new",
             "value": "PUSH"
+          }
+        }
+      }
+    },
+    "Paused": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Paused"
+          }
+        }
+      }
+    },
+    "Quiver empty. Bullseye.": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Quiver empty. Bullseye."
           }
         }
       }
@@ -1856,6 +1900,17 @@
           "stringUnit": {
             "state": "new",
             "value": "Ready to fire"
+          }
+        }
+      }
+    },
+    "Ready to fire. %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Ready to fire. %@"
           }
         }
       }
@@ -2186,6 +2241,17 @@
           "stringUnit": {
             "state": "new",
             "value": "THE FOUNDRY"
+          }
+        }
+      }
+    },
+    "THIS WEEK": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "THIS WEEK"
           }
         }
       }

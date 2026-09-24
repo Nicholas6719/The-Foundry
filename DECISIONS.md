@@ -33,6 +33,9 @@ Choices made where the spec was silent or had to bend. One line each: decision, 
 - Sleep counts toward the day you wake up (6 PM to noon window), so "today's" Vitals are last night.
 
 ## Screens
+- Quiver redesigned at your request (habit rows merged with a quiver rack): pending habits sit "in the quiver" as arrows with a FIRE button; fired ones move to "in the target" with the time and tap-to-undo; the week strip sits in a card with the streak. The round habit buttons remain on the Mac dashboard and menu bar, where space is tight.
+- The Island clock dims and shows PAUSED while paused; its digits roll instead of crossfading.
+- At large text sizes open List names wrap to two lines, and the sleep-stage legend wraps to two rows.
 - The mission arrow opens the Island and starts a session; the Island node opens it without starting.
 - On an unscheduled day with no session logged, Train shows a Rest day card with "START {DAY}" buttons for each day.
 - Train has small "EDIT {DAY}" and "NEW DAY" buttons so lifts can be changed after the first build.

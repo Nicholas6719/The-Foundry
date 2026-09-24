@@ -12,28 +12,31 @@ struct IslandRing<Center: View>: View {
         let k = diameter / 264
         ZStack {
             Circle().stroke(Palette.line, lineWidth: 8 * k).frame(width: 240 * k, height: 240 * k)
-            Circle()
-                .trim(from: 0, to: max(0.0001, progress))
-                .stroke(Palette.accent, style: StrokeStyle(lineWidth: 8 * k, lineCap: .round))
-                .rotationEffect(.degrees(-90))
-                .frame(width: 240 * k, height: 240 * k)
-                .opacity(active ? 1 : 0)
             if guides {
                 Circle().stroke(Palette.islandGuide, lineWidth: 1.5).frame(width: 192 * k, height: 192 * k)
                 Circle().stroke(Palette.islandGuide, lineWidth: 1.5).frame(width: 144 * k, height: 144 * k)
             }
-            if active {
-                let angle = (progress * 360 - 90) * .pi / 180
-                ZStack {
-                    Circle().stroke(Palette.accent.opacity(0.3), lineWidth: 3).frame(width: 36 * k, height: 36 * k)
-                    Circle().fill(Palette.accent).frame(width: 22 * k, height: 22 * k)
+            // Only the arc and its marker glide between ticks; the time text doesn't crossfade.
+            ZStack {
+                Circle()
+                    .trim(from: 0, to: max(0.0001, progress))
+                    .stroke(Palette.accent, style: StrokeStyle(lineWidth: 8 * k, lineCap: .round))
+                    .rotationEffect(.degrees(-90))
+                    .frame(width: 240 * k, height: 240 * k)
+                    .opacity(active ? 1 : 0)
+                if active {
+                    let angle = (progress * 360 - 90) * .pi / 180
+                    ZStack {
+                        Circle().stroke(Palette.accent.opacity(0.3), lineWidth: 3).frame(width: 36 * k, height: 36 * k)
+                        Circle().fill(Palette.accent).frame(width: 22 * k, height: 22 * k)
+                    }
+                    .offset(x: cos(angle) * 120 * k, y: sin(angle) * 120 * k)
                 }
-                .offset(x: cos(angle) * 120 * k, y: sin(angle) * 120 * k)
             }
+            .animation(.linear(duration: 1), value: progress)
             center
         }
         .frame(width: diameter, height: diameter)
-        .animation(.linear(duration: 1), value: progress)
     }
 }
 

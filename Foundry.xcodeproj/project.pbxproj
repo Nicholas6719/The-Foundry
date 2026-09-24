@@ -109,6 +109,7 @@
 		B02C8B17C1B60E81351506D0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0CFF702A94D7879897E10B28 /* Localizable.xcstrings */; };
 		B0CB531EDE74051A62D8AC99 /* RankParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E80973C3597A901E44CBA2B /* RankParts.swift */; };
 		B1BD847E4B696870B4011F39 /* HubScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DD85E4F7B3395B48411CC /* HubScreen.swift */; };
+		B23B3B374701C88AF2F30E90 /* QuiverRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1670FCBD38411CB136A5FE7F /* QuiverRack.swift */; };
 		B4778650D8D5CBD8CCF0135A /* Store+Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351113C305D13F46A3131BE2 /* Store+Habits.swift */; };
 		B6022F00BFC43AEA164427DE /* BarlowCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64D68EE6EADC2DD3DA6ED55C /* BarlowCondensed-Bold.ttf */; };
 		B8EC3276725A9414E5D7F3CD /* BuildDaySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCAF243A7B5B01B9BAF984F /* BuildDaySheet.swift */; };
@@ -126,6 +127,7 @@
 		C961B1E2CCB5127CF08374D5 /* LiftSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD08979C94B3B54D251375C /* LiftSheet.swift */; };
 		CC207B8332BF15C7B61E8FBB /* Barlow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31444B957DCF4AD30BAB143D /* Barlow-Medium.ttf */; };
 		D0777BE6409D6B4080BAC623 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEAEA1B473F92898F81725DB /* IBMPlexMono-Medium.ttf */; };
+		D29A639EF3D3C1C2A106B87B /* QuiverRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1670FCBD38411CB136A5FE7F /* QuiverRack.swift */; };
 		D3538381DE9D3A553EDA5CF8 /* Store+Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24274A6C92362F3A7ACA6C92 /* Store+Targets.swift */; };
 		D392E49138E307DB728322DF /* BuildDaySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCAF243A7B5B01B9BAF984F /* BuildDaySheet.swift */; };
 		D57F65E8FB9D91EE457CDFB6 /* Store+XP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD5B84F8889401C4300EB9F /* Store+XP.swift */; };
@@ -167,6 +169,7 @@
 		01D1AEF99FF50EA67C6BF1BC /* TrainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScreen.swift; sourceTree = "<group>"; };
 		0CFF702A94D7879897E10B28 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		158B824FA07D4B08B3BC841E /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		1670FCBD38411CB136A5FE7F /* QuiverRack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiverRack.swift; sourceTree = "<group>"; };
 		198FD97099CE610641DC553B /* FoundryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundryApp.swift; sourceTree = "<group>"; };
 		1AA3F4A59D8172FB1DEF7BA0 /* FoundryKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FoundryKit; path = FoundryKit; sourceTree = SOURCE_ROOT; };
 		21ACCD7259C231961DCD1656 /* FoundryTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundryTabBar.swift; sourceTree = "<group>"; };
@@ -526,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4C09FCCE37CACA66A7638C /* HabitButtons.swift */,
+				1670FCBD38411CB136A5FE7F /* QuiverRack.swift */,
 				D83239D86FB3D65F2EDB7D83 /* QuiverScreen.swift */,
 				6D03EB022EEEF87442F9E131 /* TargetBoard.swift */,
 			);
@@ -770,6 +774,7 @@
 				E582736F8510EA670D7CC44A /* OnboardingView.swift in Sources */,
 				FB32632AC5970B0934F6A62E /* Palette.swift in Sources */,
 				43741BB8AEC0BC3358B5043A /* PersistenceController.swift in Sources */,
+				D29A639EF3D3C1C2A106B87B /* QuiverRack.swift in Sources */,
 				29ADD0B83A9BE3E7157344B0 /* QuiverScreen.swift in Sources */,
 				9A43AF33C572E4B44C9C2784 /* RadarView.swift in Sources */,
 				B0CB531EDE74051A62D8AC99 /* RankParts.swift in Sources */,
@@ -830,6 +835,7 @@
 				F50F187BF1594148DB52BFCF /* OnboardingView.swift in Sources */,
 				72EE64349E6190DE94548525 /* Palette.swift in Sources */,
 				A9DBF855E35270509F434AF9 /* PersistenceController.swift in Sources */,
+				B23B3B374701C88AF2F30E90 /* QuiverRack.swift in Sources */,
 				E5FA2A482496656594B4D89C /* QuiverScreen.swift in Sources */,
 				6A25C0C2F76DE887BCEB4625 /* RadarView.swift in Sources */,
 				78A00397609CB09024FE600C /* RankParts.swift in Sources */,
