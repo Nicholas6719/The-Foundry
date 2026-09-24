@@ -1,0 +1,133 @@
+name: Foundry
+options:
+  bundleIdPrefix: com.nicholas6719
+  deploymentTarget:
+    iOS: "26.0"
+    macOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+  groupSortPosition: top
+configFiles:
+  Debug: Config/Base.xcconfig
+  Release: Config/Base.xcconfig
+packages:
+  FoundryKit:
+    path: FoundryKit
+targets:
+  Foundry:
+    type: application
+    platform: iOS
+    sources:
+      - path: Shared
+      - path: iOS
+    dependencies:
+      - package: FoundryKit
+        product: FoundryCore
+      - sdk: HealthKit.framework
+    settings:
+      base:
+        PRODUCT_NAME: Foundry
+        PRODUCT_BUNDLE_IDENTIFIER: com.nicholas6719.foundry
+        CODE_SIGN_ENTITLEMENTS: $(FOUNDRY_IOS_ENTITLEMENTS)
+        TARGETED_DEVICE_FAMILY: "1"
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_FILE: iOS/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+    info:
+      path: iOS/Info.plist
+      properties:
+        CFBundleDisplayName: Foundry
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        ITSAppUsesNonExemptEncryption: false
+        UIUserInterfaceStyle: Dark
+        UIStatusBarStyle: UIStatusBarStyleLightContent
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIBackgroundModes: [remote-notification]
+        NSHealthShareUsageDescription: "Foundry reads your sleep, workouts, and resting heart rate to show your Vitals and power your Recovery bonus. Nothing leaves your devices except your own private iCloud."
+        LSApplicationQueriesSchemes: [shortcuts]
+        CFBundleURLTypes:
+          - CFBundleURLName: com.nicholas6719.foundry
+            CFBundleURLSchemes: [foundry]
+        FoundryCloudKit: $(FOUNDRY_CLOUDKIT)
+        FoundryHealthKit: $(FOUNDRY_HEALTHKIT)
+  FoundryMac:
+    type: application
+    platform: macOS
+    sources:
+      - path: Shared
+      - path: macOS
+    dependencies:
+      - package: FoundryKit
+        product: FoundryCore
+    settings:
+      base:
+        PRODUCT_NAME: Foundry
+        PRODUCT_BUNDLE_IDENTIFIER: com.nicholas6719.foundry
+        CODE_SIGN_ENTITLEMENTS: $(FOUNDRY_MAC_ENTITLEMENTS)
+        ENABLE_HARDENED_RUNTIME: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_FILE: macOS/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        COMBINE_HIDPI_IMAGES: YES
+    info:
+      path: macOS/Info.plist
+      properties:
+        CFBundleDisplayName: Foundry
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.productivity
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        NSHumanReadableCopyright: "Personal project. Not affiliated with any rights holder."
+        CFBundleURLTypes:
+          - CFBundleURLName: com.nicholas6719.foundry
+            CFBundleURLSchemes: [foundry]
+        FoundryCloudKit: $(FOUNDRY_CLOUDKIT)
+        FoundryHealthKit: NO
+  FoundryTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests/FoundryTests
+    dependencies:
+      - target: Foundry
+      - package: FoundryKit
+        product: FoundryCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.nicholas6719.foundry.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Foundry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foundry
+        BUNDLE_LOADER: $(TEST_HOST)
+        CODE_SIGN_ENTITLEMENTS: ""
+schemes:
+  Foundry:
+    build:
+      targets:
+        Foundry: all
+        FoundryTests: [test]
+    test:
+      targets: [FoundryTests]
+      gatherCoverageData: false
+    run:
+      config: Debug
+    archive:
+      config: Release
+  FoundryMac:
+    build:
+      targets:
+        FoundryMac: all
+    run:
+      config: Debug
+    archive:
+      config: Release

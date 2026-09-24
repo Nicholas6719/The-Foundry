@@ -1,0 +1,11 @@
+// Copy this file to Signing.local.xcconfig (same folder). That copy is gitignored.
+// See SETUP.md for what each line does.
+
+// Your Apple team ID (Xcode > Settings > Accounts > your team). Leave empty to sign locally only.
+DEVELOPMENT_TEAM = ABCDE12345
+
+// YES needs a paid Apple Developer Program membership (iCloud sync between iPhone and Mac).
+FOUNDRY_CLOUDKIT = NO
+
+// YES lets the iPhone app read Apple Health. Works with a free or paid team.
+FOUNDRY_HEALTHKIT = YES
