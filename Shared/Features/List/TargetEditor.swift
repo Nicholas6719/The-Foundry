@@ -11,6 +11,7 @@ struct TargetEditor: View {
     @State private var hasDue = false
     @State private var due = Date()
     @State private var primary = false
+    @State private var confirmDelete = false
     @FocusState private var focused: Bool
 
     private var trimmed: String { title.trimmingCharacters(in: .whitespacesAndNewlines) }
@@ -79,16 +80,22 @@ struct TargetEditor: View {
                 .opacity(trimmed.isEmpty ? 0.5 : 1)
                 .keyboardShortcut(.defaultAction)
 
-            if let target {
-                Button("DELETE NAME", role: .destructive) {
-                    env.store.delete(target)
-                    onDone()
-                }
-                .buttonStyle(SecondaryButtonStyle(tint: Palette.inkRed, stroke: Palette.lineDim))
+            if target != nil {
+                Button("DELETE NAME", role: .destructive) { confirmDelete = true }
+                    .buttonStyle(SecondaryButtonStyle(tint: Palette.inkRed, stroke: Palette.lineDim))
             }
+        }
+        .confirmationDialog("Delete this name?", isPresented: $confirmDelete, titleVisibility: .visible) {
+            Button("Delete Name", role: .destructive) {
+                if let target { env.store.delete(target) }
+                onDone()
+            }
+        } message: {
+            Text("It comes off the List for good. XP already earned for striking it stays.")
         }
         .padding(Metrics.screenPadding)
         .frame(maxWidth: 560)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Palette.bg)
         .onAppear(perform: load)
     }

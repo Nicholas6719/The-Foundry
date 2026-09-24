@@ -94,6 +94,7 @@ struct NotebookRow: View {
                 .offset(x: swipe)
         }
         .frame(minHeight: rowHeight)
+        .clipped() // a swiped name slides under the margin, not over the spiral holes
         .overlay(alignment: .bottom) {
             if !isLast { Rectangle().fill(Palette.paperRule).frame(height: 1) }
         }

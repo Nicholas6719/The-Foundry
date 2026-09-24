@@ -26,12 +26,14 @@ struct LeadLiftCard: View {
     var item: LiftToday
     var ladderWidth: CGFloat = 190
     var numeralSize: CGFloat = 76
+    var holdAnimation = false
     var onOpen: () -> Void
 
     var body: some View {
         let lift = item.lift
         HStack(spacing: 14) {
-            LadderView(currentRung: lift.currentRung, start: lift.startWeightLb, step: lift.stepLb)
+            LadderView(currentRung: lift.currentRung, start: lift.startWeightLb, step: lift.stepLb,
+                       holdAnimation: holdAnimation)
                 .frame(maxWidth: ladderWidth)
             VStack(alignment: .leading, spacing: 4) {
                 Text(LadderRules.format(lift.currentWeight))

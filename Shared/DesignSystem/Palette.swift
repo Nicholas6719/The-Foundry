@@ -6,7 +6,10 @@ import AppKit
 #endif
 
 /// The Foundry color tokens. The only place hex values live.
-enum Palette {
+///
+/// `nonisolated` because SwiftUI resolves dynamic colors on its background render thread;
+/// a main-actor provider closure traps there.
+nonisolated enum Palette {
     static let bg = Color(hex: 0x08120D)
     static let bgDeep = Color(hex: 0x050D09)
     static let surface = Color(hex: 0x0F1D15)
@@ -58,7 +61,7 @@ enum Palette {
 }
 
 extension Color {
-    init(hex: UInt32, opacity: Double = 1) {
+    nonisolated init(hex: UInt32, opacity: Double = 1) {
         self.init(.sRGB,
                   red: Double((hex >> 16) & 0xFF) / 255,
                   green: Double((hex >> 8) & 0xFF) / 255,
@@ -69,7 +72,7 @@ extension Color {
 
 #if canImport(UIKit)
 extension UIColor {
-    convenience init(hex: UInt32) {
+    nonisolated convenience init(hex: UInt32) {
         self.init(red: CGFloat((hex >> 16) & 0xFF) / 255,
                   green: CGFloat((hex >> 8) & 0xFF) / 255,
                   blue: CGFloat(hex & 0xFF) / 255,
@@ -78,7 +81,7 @@ extension UIColor {
 }
 #else
 extension NSColor {
-    convenience init(hex: UInt32) {
+    nonisolated convenience init(hex: UInt32) {
         self.init(srgbRed: CGFloat((hex >> 16) & 0xFF) / 255,
                   green: CGFloat((hex >> 8) & 0xFF) / 255,
                   blue: CGFloat(hex & 0xFF) / 255,

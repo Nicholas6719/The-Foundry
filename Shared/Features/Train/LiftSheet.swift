@@ -136,13 +136,15 @@ struct LiftSheet: View {
                     .foregroundStyle(Palette.textMuted)
             }
             ForEach(sessions) { session in
+                let clean = session.reps.count >= lift.sets && session.reps.allSatisfy { $0 >= lift.reps }
                 HStack {
-                    Text(Self.shortDate(session.dayKey, keys: env.store.keys)).mono(12).foregroundStyle(Palette.textMuted)
+                    Text(session.dayKey == env.store.todayKey ? "TODAY" : Self.shortDate(session.dayKey, keys: env.store.keys))
+                        .mono(12).foregroundStyle(Palette.textMuted)
                     Spacer()
                     Text("\(LadderRules.format(session.weight)) LB").mono(12).foregroundStyle(Palette.text)
                     Text(session.reps.map(String.init).joined(separator: "·"))
                         .mono(12)
-                        .foregroundStyle(session.reps.allSatisfy { $0 >= lift.reps } ? Palette.accent : Palette.textMuted)
+                        .foregroundStyle(clean ? Palette.accent : Palette.textMuted)
                         .frame(minWidth: 80, alignment: .trailing)
                 }
                 .frame(minHeight: 32)

@@ -9,35 +9,56 @@ struct LadderView: View {
     var currentRung: Int
     var start: Double
     var step: Double
+    /// True while something covers the ladder (a sheet); a climb then waits to play until it's visible.
+    var holdAnimation = false
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var shownRung = 1
     @State private var barRung: Double = 1
     @State private var cameraRung: Double = 1
     @State private var ready = false
 
     var body: some View {
-        LadderScene(barRung: barRung, cameraRung: cameraRung, currentRung: currentRung, start: start, step: step)
+        LadderScene(barRung: barRung, cameraRung: cameraRung, currentRung: shownRung, start: start, step: step)
             .aspectRatio(190 / 320, contentMode: .fit)
             .onAppear {
+                shownRung = currentRung
                 barRung = Double(currentRung)
                 cameraRung = Double(currentRung)
                 ready = true
             }
-            .onChange(of: currentRung) { old, new in
-                guard ready else { return }
-                if reduceMotion || new < old {
-                    withAnimation(.easeInOut(duration: 0.25)) {
-                        barRung = Double(new)
-                        cameraRung = Double(new)
-                    }
-                } else {
-                    withAnimation(.spring(response: 0.45, dampingFraction: 0.7)) { barRung = Double(new) }
-                    withAnimation(.easeInOut(duration: 0.5).delay(0.55)) { cameraRung = Double(new) }
+            .onChange(of: currentRung) {
+                guard ready, !holdAnimation else { return }
+                play()
+            }
+            .onChange(of: holdAnimation) { _, held in
+                guard ready, !held, shownRung != currentRung else { return }
+                // Let the sheet finish sliding away first.
+                Task {
+                    try? await Task.sleep(for: .milliseconds(350))
+                    play()
                 }
             }
             .accessibilityElement()
             .accessibilityLabel("Salmon ladder")
             .accessibilityValue("The bar sits on the \(pounds(currentRung)) pound rung, \(pounds(currentRung + 1)) is next")
+    }
+
+    /// Moves the ladder from what's shown to `currentRung`: a climb slides the bar up, then scrolls.
+    private func play() {
+        let old = shownRung
+        let new = currentRung
+        guard old != new else { return }
+        shownRung = new
+        if reduceMotion || new < old {
+            withAnimation(.easeInOut(duration: 0.25)) {
+                barRung = Double(new)
+                cameraRung = Double(new)
+            }
+        } else {
+            withAnimation(.spring(response: 0.45, dampingFraction: 0.7)) { barRung = Double(new) }
+            withAnimation(.easeInOut(duration: 0.5).delay(0.55)) { cameraRung = Double(new) }
+        }
     }
 
     private func pounds(_ rung: Int) -> String {

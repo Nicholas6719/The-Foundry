@@ -7,6 +7,8 @@ struct MacDashboard: View {
     @Environment(AppEnvironment.self) private var env
     @Query private var allTargets: [Target]
     @State private var targetSheet: TargetSheet?
+    /// False until first shown, so arrows already fired don't all fly in again.
+    @State private var appeared = false
 
     private let col1 = (min: CGFloat(340), max: CGFloat(440))
     private let col2 = (min: CGFloat(300), max: CGFloat(360))
@@ -22,16 +24,17 @@ struct MacDashboard: View {
                     quiverCard(snap).frame(minWidth: col2.min, maxWidth: col2.max)
                     notebookCard.frame(minWidth: 300, maxWidth: .infinity)
                 }
-                .frame(minHeight: 470)
+                .frame(minHeight: 460)
                 HStack(alignment: .top, spacing: 16) {
                     vitalsCard.frame(minWidth: col1.min, maxWidth: col1.max)
                     ladderCard.frame(minWidth: col2.min, maxWidth: col2.max)
                     islandCard.frame(minWidth: 300, maxWidth: .infinity)
                 }
-                .frame(minHeight: 262)
+                .frame(minHeight: 250)
             }
-            .padding(EdgeInsets(top: 28, leading: 32, bottom: 28, trailing: 32))
+            .padding(EdgeInsets(top: 22, leading: 32, bottom: 22, trailing: 32))
         }
+        .onAppear { DispatchQueue.main.async { appeared = true } }
         .sheet(item: $targetSheet) { item in
             TargetEditor(target: item.target) { targetSheet = nil }
                 .environment(env)
@@ -101,7 +104,7 @@ struct MacDashboard: View {
 
     private func quiverCard(_ snap: TodaySnapshot) -> some View {
         VStack(spacing: 16) {
-            TargetBoard(fired: snap.habitsDone, total: snap.habitsTotal, animateNew: true)
+            TargetBoard(fired: snap.habitsDone, total: snap.habitsTotal, animateNew: appeared)
                 .frame(maxWidth: 280)
             HabitButtonsView(states: env.store.habitStates(), size: 56)
             WeekTargets(week: snap.week, todayIndex: snap.todayIndex, size: 24, showLetters: false, cutout: Palette.surface)

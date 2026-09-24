@@ -42,7 +42,7 @@ struct TrainScreen: View {
             if days.isEmpty {
                 emptyState
             } else if let day, let lead {
-                LeadLiftCard(item: lead) { sheet = .lift(lead.lift) }
+                LeadLiftCard(item: lead, holdAnimation: sheet != nil) { sheet = .lift(lead.lift) }
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                     ForEach(items) { item in
                         LiftTile(item: item) { sheet = .lift(item.lift) }
