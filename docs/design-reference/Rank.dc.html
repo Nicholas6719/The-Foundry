@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foundry Rank</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap">
+<style>
+body{margin:0;background:#08120d}
+.tab{flex:1 1 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;background:none;border:0;padding:0;color:#8fa596;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.med{display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#e9f1ea}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #08120d; color: #e9f1ea; font-family: 'Barlow', sans-serif; overflow: hidden">
+<div style="flex-grow: 1; box-sizing: border-box; padding: 60px 24px 0; display: flex; flex-direction: column; gap: 16px">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" aria-label="Back to the Foundry" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #1f3a2a; border-radius: 50%; background: #0f1d15; color: {{accent}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+</a>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" role="img" aria-label="Rank">
+<path d="M24 2l19 11v22L24 46 5 35V13z" fill="#0f1d15" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round"/>
+<g transform="translate(12 12)" stroke="{{accent}}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11l6-6 6 6M6 18l6-6 6 6"/></g>
+</svg>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px">
+<div style="position: relative; width: 132px; height: 132px">
+<svg width="132" height="132" viewBox="0 0 132 132" fill="none" aria-hidden="true">
+<circle cx="66" cy="66" r="62" stroke="#1f3a2a" stroke-width="6"/>
+<circle cx="66" cy="66" r="62" stroke="{{accent}}" stroke-width="6" stroke-linecap="round" stroke-dasharray="241.5 389.6" transform="rotate(-90 66 66)"/>
+<path d="M66 20l34 19.5v39L66 98 32 78.5v-39z" fill="#0f1d15" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round" transform="translate(0 6)"/>
+<path d="M66 40l18 24h-10v24H58V64H48z" fill="{{accent}}" transform="translate(0 2)"/>
+</svg>
+</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; letter-spacing: 0.06em">VIGILANTE</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #93a89a">1,240 / 2,000 XP</div>
+</div>
+
+<div style="position: relative; display: flex; justify-content: space-between; padding: 0 10px">
+<div style="position: absolute; left: 40px; right: 40px; top: 27px; height: 3px; background: #1f3a2a"></div>
+<div style="position: absolute; left: 40px; width: 93px; top: 27px; height: 3px; background: {{accent}}"></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #93a89a">
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="{{accent}}"/><path d="M17 30c3-2 5 2 8 0s5 2 8 0 5 2 6 0" stroke="#07110c" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+<span>CASTAWAY</span>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: {{accent}}">
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="#0f1d15" stroke="{{accent}}" stroke-width="2.5"/><circle cx="28" cy="28" r="26" stroke="{{accent}}" stroke-opacity="0.25" stroke-width="8"/><path d="M18 33l10-12 10 12M18 41l10-12 10 12" stroke="{{accent}}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span>VIGILANTE</span>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #93a89a">
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="#0f1d15" stroke="#3a5646" stroke-width="2"/><g transform="translate(16 16)" stroke="#93a89a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></svg>
+<span>HOOD</span>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #93a89a">
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="#0f1d15" stroke="#3a5646" stroke-width="2"/><g transform="translate(16 16)" stroke="#93a89a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></svg>
+<span>ARROW</span>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; padding-top: 4px">
+<div class="med">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#16281d" stroke="{{accent}}" stroke-width="2"/><circle cx="32" cy="32" r="16" stroke="{{accent}}" stroke-width="2.5"/><circle cx="32" cy="32" r="5" fill="#e0616d"/></svg>
+<span>FIRST BULLSEYE</span>
+</div>
+<div class="med">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#16281d" stroke="{{accent}}" stroke-width="2"/><g transform="translate(20 20)" stroke="{{accent}}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20L18 8M9 20L21 8M3 17L15 5"/></g></svg>
+<span>SEVEN STRAIGHT</span>
+</div>
+<div class="med">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#16281d" stroke="{{accent}}" stroke-width="2"/><g transform="translate(20 20)" stroke="{{accent}}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v18M16 3v18M8 7h8M8 12h8M8 17h8"/></g></svg>
+<span>RUNG FOUR</span>
+</div>
+<div class="med">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#16281d" stroke="{{accent}}" stroke-width="2"/><g transform="translate(20 20)" stroke="{{accent}}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></g></svg>
+<span>IRON SLEEPER</span>
+</div>
+<div class="med" style="color: #93a89a">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0f1d15" stroke="#3a5646" stroke-width="2" stroke-dasharray="4 4"/><g transform="translate(20 20)" stroke="#93a89a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></g></svg>
+<span>DEEP FOCUS</span>
+</div>
+<div class="med" style="color: #93a89a">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0f1d15" stroke="#3a5646" stroke-width="2" stroke-dasharray="4 4"/><g transform="translate(20 20)" stroke="#93a89a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></g></svg>
+<span>TEN STRUCK</span>
+</div>
+</div>
+
+</div>
+<nav style="display: flex; height: 88px; box-sizing: border-box; padding: 6px 8px 26px; background: #0b1810; border-top: 1px solid #1f3a2a">
+<button class="tab" aria-label="Foundry" style="color: {{accent}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 9h-4.5v9h-5v-9H5z"/></svg><span>Foundry</span></button>
+<button class="tab" aria-label="The List"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></svg><span>List</span></button>
+<button class="tab" aria-label="The Quiver"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20L18 8M9 20L21 8M3 17L15 5"/></svg><span>Quiver</span></button>
+<button class="tab" aria-label="Training"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v18M16 3v18M8 7h8M8 12h8M8 17h8"/></svg><span>Train</span></button>
+<button class="tab" aria-label="Vitals"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg><span>Vitals</span></button>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#62c47f","options":["#62c47f","#7fd6a0","#4fae6d"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#62c47f' };
+  }
+}
+</script>
+</body>
+</html>

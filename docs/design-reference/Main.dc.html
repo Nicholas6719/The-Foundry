@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foundry Hub</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap">
+<style>
+body{margin:0;background:#08120d}
+.tab{flex:1 1 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;background:none;border:0;padding:0;color:#8fa596;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #08120d; color: #e9f1ea; font-family: 'Barlow', sans-serif; overflow: hidden">
+<div style="flex-grow: 1; box-sizing: border-box; padding: 60px 24px 0; display: flex; flex-direction: column; gap: 16px">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" role="img" aria-label="The Foundry">
+<path d="M24 2l19 11v22L24 46 5 35V13z" fill="#0f1d15" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round"/>
+<path d="M24 12l9 12h-5v12h-8V24h-5z" fill="{{accent}}"/>
+</svg>
+<a href="Rank.dc.html" aria-label="Rank: Vigilante, 1,240 XP" style="display: flex; align-items: center; gap: 8px; height: 44px; box-sizing: border-box; padding: 0 16px; border: 1px solid #1f3a2a; border-radius: 999px; background: #0f1d15; color: {{accent}}; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; text-decoration: none">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11l6-6 6 6M6 18l6-6 6 6"/></svg>
+<span>1,240</span>
+</a>
+</div>
+
+<div style="display: flex; justify-content: center">
+<svg width="342" height="342" viewBox="0 0 342 342" fill="none" role="img" aria-label="Foundry hub: five stations around the emblem">
+<circle cx="171" cy="171" r="160" stroke="#16281d" stroke-width="1.5"/>
+<circle cx="171" cy="171" r="124" stroke="#1f3a2a" stroke-width="1.5" stroke-dasharray="2 7"/>
+<circle cx="171" cy="171" r="84" stroke="#16281d" stroke-width="1.5"/>
+<path d="M171 4v22M171 316v22M4 171h22M316 171h22" stroke="#1f3a2a" stroke-width="2" stroke-linecap="round"/>
+<path d="M171 171L171 47M171 171L289 133M171 171L244 271M171 171L98 271M171 171L53 133" stroke="#16281d" stroke-width="2"/>
+
+<circle cx="171" cy="171" r="62" fill="#08120d"/>
+<circle cx="171" cy="171" r="58" stroke="#1f3a2a" stroke-width="5"/>
+<circle cx="171" cy="171" r="58" stroke="{{accent}}" stroke-width="5" stroke-linecap="round" stroke-dasharray="273.3 364.4" transform="rotate(-90 171 171)"/>
+<path d="M171 134l32 18.5v37L171 208l-32-18.5v-37z" fill="#0f1d15" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round"/>
+<path d="M171 148l15 20h-8v20h-14v-20h-8z" fill="{{accent}}"/>
+
+<circle cx="171" cy="47" r="28" fill="#0f1d15" stroke="{{accent}}" stroke-width="2"/>
+<g transform="translate(159 35)" stroke="{{accent}}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></g>
+<circle cx="192" cy="27" r="7" fill="#e0616d"/>
+<text x="171" y="93" text-anchor="middle" fill="#93a89a" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">LIST</text>
+
+<circle cx="289" cy="133" r="28" fill="#0f1d15"/>
+<circle cx="289" cy="133" r="28" stroke="#1f3a2a" stroke-width="4"/>
+<circle cx="289" cy="133" r="28" stroke="{{accent}}" stroke-width="4" stroke-linecap="round" stroke-dasharray="132 176" transform="rotate(-90 289 133)"/>
+<g transform="translate(277 121)" stroke="{{accent}}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20L18 8M9 20L21 8M3 17L15 5"/></g>
+<text x="289" y="179" text-anchor="middle" fill="#93a89a" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">QUIVER</text>
+
+<circle cx="244" cy="271" r="28" fill="{{accent}}"/>
+<g transform="translate(232 259)" stroke="#07110c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v18M16 3v18M8 7h8M8 12h8M8 17h8"/></g>
+<text x="244" y="317" text-anchor="middle" fill="#93a89a" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">TRAIN</text>
+
+<circle cx="98" cy="271" r="28" fill="#0f1d15" stroke="#3a5646" stroke-width="2" stroke-dasharray="4 4"/>
+<g transform="translate(86 259)" stroke="#93a89a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></g>
+<text x="98" y="317" text-anchor="middle" fill="#93a89a" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">ISLAND</text>
+
+<circle cx="53" cy="133" r="28" fill="{{accent}}"/>
+<g transform="translate(41 121)" stroke="#07110c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></g>
+<text x="53" y="179" text-anchor="middle" fill="#93a89a" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">VITALS</text>
+</svg>
+</div>
+
+<div style="display: flex; align-items: center; gap: 14px; padding: 14px 14px 14px 18px; background: #0f1d15; border: 1px solid #1f3a2a; border-radius: 16px">
+<div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 3px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: {{accent}}">TONIGHT'S MISSION</div>
+<div style="font-size: 19px; font-weight: 600; line-height: 1.25">Strike two names. Fire one last arrow.</div>
+</div>
+<a href="Island.dc.html" aria-label="Begin the mission on the Island" style="width: 48px; height: 48px; flex: none; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: {{accent}}; color: #07110c">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</a>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 0 6px">
+<div style="display: flex; align-items: baseline; gap: 6px">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: {{accent}}">4</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #93a89a">DAY STREAK</span>
+</div>
+<svg width="170" height="28" viewBox="0 0 170 28" fill="none" role="img" aria-label="Four arrows fired, one in progress, two to come">
+<g stroke="{{accent}}" stroke-width="2.5" stroke-linecap="round"><path d="M4 24L18 4M8 24L18 10"/></g>
+<g transform="translate(26 0)" stroke="{{accent}}" stroke-width="2.5" stroke-linecap="round"><path d="M4 24L18 4M8 24L18 10"/></g>
+<g transform="translate(52 0)" stroke="{{accent}}" stroke-width="2.5" stroke-linecap="round"><path d="M4 24L18 4M8 24L18 10"/></g>
+<g transform="translate(78 0)" stroke="{{accent}}" stroke-width="2.5" stroke-linecap="round"><path d="M4 24L18 4M8 24L18 10"/></g>
+<g transform="translate(104 0)" stroke="{{accent}}" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 5"><path d="M4 24L18 4"/></g>
+<g transform="translate(130 0)" stroke="#3a5646" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 5"><path d="M4 24L18 4"/></g>
+<g transform="translate(150 0)" stroke="#3a5646" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 5"><path d="M4 24L18 4"/></g>
+</svg>
+</div>
+
+</div>
+<nav style="display: flex; height: 88px; box-sizing: border-box; padding: 6px 8px 26px; background: #0b1810; border-top: 1px solid #1f3a2a">
+<button class="tab" aria-label="Foundry" style="color: {{accent}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 9h-4.5v9h-5v-9H5z"/></svg><span>Foundry</span></button>
+<button class="tab" aria-label="The List"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></svg><span>List</span></button>
+<button class="tab" aria-label="The Quiver"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20L18 8M9 20L21 8M3 17L15 5"/></svg><span>Quiver</span></button>
+<button class="tab" aria-label="Training"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v18M16 3v18M8 7h8M8 12h8M8 17h8"/></svg><span>Train</span></button>
+<button class="tab" aria-label="Vitals"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg><span>Vitals</span></button>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#62c47f","options":["#62c47f","#7fd6a0","#4fae6d"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#62c47f' };
+  }
+}
+</script>
+</body>
+</html>

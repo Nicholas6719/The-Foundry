@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foundry Menu Bar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap">
+<style>
+body{margin:0;background:#08120d}
+.hab{display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#93a89a;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 320px; height: 420px; box-sizing: border-box; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; background: #0f1d15; border: 1px solid #2b4536; border-radius: 18px; color: #e9f1ea; font-family: 'Barlow', sans-serif; overflow: hidden">
+
+<div style="width: 100%; display: flex; align-items: center; justify-content: space-between">
+<svg width="36" height="36" viewBox="0 0 48 48" fill="none" role="img" aria-label="Foundry">
+<path d="M24 2l19 11v22L24 46 5 35V13z" fill="#08120d" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round"/>
+<path d="M24 12l9 12h-5v12h-8V24h-5z" fill="{{accent}}"/>
+</svg>
+<div style="display: flex; align-items: center; gap: 6px; height: 32px; box-sizing: border-box; padding: 0 12px; border: 1px solid {{accent}}; border-radius: 999px; color: {{accent}}; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em" role="img" aria-label="Foundry Focus is on">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+<span>FOCUS ON</span>
+</div>
+</div>
+
+<div style="position: relative; width: 148px; height: 148px">
+<svg width="148" height="148" viewBox="0 0 264 264" fill="none" aria-hidden="true">
+<circle cx="132" cy="132" r="120" stroke="#1f3a2a" stroke-width="10"/>
+<circle cx="132" cy="132" r="120" stroke="{{accent}}" stroke-width="10" stroke-linecap="round" stroke-dasharray="220 754" transform="rotate(-90 132 132)"/>
+<circle cx="248" cy="162" r="13" fill="{{accent}}"/>
+</svg>
+<div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 32px">17:42</div>
+<div style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 18px; color: #e0616d">Ship the side project</div>
+</div>
+</div>
+
+<div style="width: 100%; display: flex; justify-content: space-between; padding: 0 6px; box-sizing: border-box">
+<button class="hab" aria-label="Train, fired"><svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="{{accent}}"/><g transform="translate(20 20)" stroke="#07110c" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></g></svg><span>TRAIN</span></button>
+<button class="hab" aria-label="Eat on plan, fired"><svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="{{accent}}"/><g transform="translate(20 20)" stroke="#07110c" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12c0 4 3.5 7 8 7s8-3 8-7M8 8c0-2 1.5-4 4-4s4 2 4 4"/></g></svg><span>EAT</span></button>
+<button class="hab" aria-label="Read, fired"><svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="{{accent}}"/><g transform="translate(20 20)" stroke="#07110c" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></g></svg><span>READ</span></button>
+<button class="hab" aria-label="Sleep on time, ready to fire" style="color: {{accent}}"><svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0f1d15" stroke="{{accent}}" stroke-width="2.5"/><circle cx="32" cy="32" r="30" stroke="{{accent}}" stroke-opacity="0.25" stroke-width="8"/><g transform="translate(20 20)" stroke="{{accent}}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></g></svg><span>SLEEP</span></button>
+</div>
+
+<div style="width: 100%; display: flex; gap: 10px; margin-top: auto">
+<button style="flex: 1 1 0; height: 44px; background: none; border: 1px solid {{accent}}; border-radius: 12px; color: {{accent}}; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.08em; cursor: pointer">PAUSE</button>
+<button style="flex: 1 1 0; height: 44px; background: none; border: 1px solid #3a5646; border-radius: 12px; color: #e9f1ea; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.08em; cursor: pointer">LEAVE ISLAND</button>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#62c47f","options":["#62c47f","#7fd6a0","#4fae6d"]},"$preview":{"width":320,"height":420}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#62c47f' };
+  }
+}
+</script>
+</body>
+</html>
